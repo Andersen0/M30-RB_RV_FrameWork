@@ -14,4 +14,4 @@ The task builds upon previous work done by developers at NASA.
 [OGMA](https://github.com/nasa/ogma)
 
 ## Workflow
-![Insert image of workflow](image.jpg)
+![Insert image of workflow](workflow.jpg)
