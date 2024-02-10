@@ -15,4 +15,4 @@ The task builds upon previous work done by developers at NASA.
 
 ## Workflow
 
-<img src="workflow.jpg" width="120">
+<img src="workflow.jpg" width="500">
