@@ -10,11 +10,8 @@ The task builds upon previous work done by developers at NASA.
 
 ### Software developed by NASA, utilized in the framework:
 [FRET](https://github.com/NASA-SW-VnV/fret/tree/master)
+
 [OGMA](https://github.com/nasa/ogma)
 
-### Table Showcase
-
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text | 
+## Workflow
+![Insert image of workflow](image.jpg)
