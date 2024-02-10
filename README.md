@@ -15,4 +15,4 @@ The task builds upon previous work done by developers at NASA.
 
 ## Workflow
 
-<img src="workflow.jpg" style="transform: rotate(90deg);" />
+<img src="workflow.jpg" style="transform: rotate(90deg);" width="500" />
