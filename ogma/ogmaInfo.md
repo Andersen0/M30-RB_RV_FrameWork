@@ -14,13 +14,4 @@ Files that are not operational (_XOP) or have an error message to their name (_E
 
 | File | Error Message |
 | ----------- | ----------- |
-| test_OP.hs  | Operational | 
-| test_monitor.hs | ```
-{
-Monitor.hs:101:100: error:
-    Variable not in scope: ap_standby_state :: Stream a0
-    |
-101 | propFSM_006 = (PTLTL.alwaysBeen ((((state == ap_maneuver_state) && standby) && good) ==> (STATE == ap_standby_state)))
-    |   
-}```
-| --- | --- |
+| test_OP.hs  | Operational |
