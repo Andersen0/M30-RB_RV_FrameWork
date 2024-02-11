@@ -1,0 +1,152 @@
+
+{
+  "FSMSpec":
+  {
+
+"Internal_variables":
+[
+
+],
+
+"Other_variables":
+[
+
+  
+  {"name":"apfail", "type":"bool"},
+ 
+
+  
+  {"name":"request", "type":"real"},
+ 
+
+
+  
+{"name":"ap_maneuver_state", "type":"int"},
+
+ 
+  
+{"name":"ap_nominal_state", "type":"real"},
+
+ 
+  
+{"name":"ap_standby_state", "type":"bool"},
+
+ 
+  
+{"name":"ap_transition_state", "type":"int"},
+
+ 
+  
+{"name":"good", "type":"bool"},
+
+ 
+  
+{"name":"limits", "type":"real"},
+
+ 
+  
+{"name":"sen_fault_state", "type":"bool"},
+
+ 
+  
+{"name":"sen_nominal_state", "type":"int"},
+
+ 
+  
+{"name":"sen_transition_state", "type":"int"},
+
+ 
+  
+{"name":"senstate", "type":"int"},
+
+ 
+  
+{"name":"state", "type":"real"},
+
+ 
+  
+  {"name":"supported", "type":"bool"}
+  
+ 
+],
+
+"Functions":
+[
+
+
+ {"name":"SENSTATE", "moduleName":""},
+ 
+
+
+ {"name":"STATE", "moduleName":""},
+ 
+
+
+ {"name":"pullup", "moduleName":""},
+ 
+
+
+{"name":"standby", "moduleName":""}
+  
+
+],
+
+"Requirements":
+[
+
+  
+{ "name": "FSM-002", "ptLTL": "(H ((standby & (state = ap_transition_state)) -> (STATE = ap_standby_state)))", "CoCoSpecCode": "H(((standby and (state = ap_transition_state)) => (STATE = ap_standby_state)))", "fretish": "FSM shall always satisfy if (standby & state = ap_transition_state) then STATE = ap_standby_state"},
+
+ 
+  
+{ "name": "FSM-005", "ptLTL": "(H (((state = ap_nominal_state) & standby) -> (STATE = ap_standby_state)))", "CoCoSpecCode": "H((((state = ap_nominal_state) and standby) => (STATE = ap_standby_state)))", "fretish": "FSM shall always satisfy if (state=ap_nominal_state & standby)  then STATE = ap_standby_state"},
+
+ 
+  
+{ "name": "FSM-003", "ptLTL": "(H ((((state = ap_transition_state) & good) & supported) -> (STATE = ap_nominal_state)))", "CoCoSpecCode": "H(((((state = ap_transition_state) and good) and supported) => (STATE = ap_nominal_state)))", "fretish": "FSM shall always satisfy if (state = ap_transition_state & good & supported) then STATE = ap_nominal_state"},
+
+ 
+  
+{ "name": "FSM-008", "ptLTL": "(H (((state = ap_standby_state) & (! standby)) -> (STATE = ap_transition_state)))", "CoCoSpecCode": "H((((state = ap_standby_state) and not (standby)) => (STATE = ap_transition_state)))", "fretish": " FSM shall always satisfy if (state = ap_standby_state & !standby) then STATE = ap_transition_state"},
+
+ 
+  
+{ "name": "FSM-011", "ptLTL": "(H (((senstate = sen_nominal_state) & (! request)) -> (SENSTATE = sen_transition_state)))", "CoCoSpecCode": "H((((senstate = sen_nominal_state) and not (request)) => (SENSTATE = sen_transition_state)))", "fretish": "FSM shall always  satisfy if (senstate = sen_nominal_state & !request) then SENSTATE = sen_transition_state"},
+
+ 
+  
+{ "name": "FSM-009", "ptLTL": "(H (((state = ap_standby_state) & apfail) -> (STATE = ap_maneuver_state)))", "CoCoSpecCode": "H((((state = ap_standby_state) and apfail) => (STATE = ap_maneuver_state)))", "fretish": "FSM shall always satisfy if (state = ap_standby_state & apfail ) then STATE = ap_maneuver_state"},
+
+ 
+  
+{ "name": "FSM-012", "ptLTL": "(H ((((senstate = sen_fault_state) & (! request)) & (! limits)) -> (SENSTATE = sen_transition_state)))", "CoCoSpecCode": "H(((((senstate = sen_fault_state) and not (request)) and not (limits)) => (SENSTATE = sen_transition_state)))", "fretish": "FSM shall  always  satisfy if (senstate = sen_fault_state & !request & !limits) then SENSTATE = sen_transition_state"},
+
+ 
+  
+{ "name": "FSM-010", "ptLTL": "(H (((senstate = sen_nominal_state) & limits) -> (SENSTATE = sen_fault_state)))", "CoCoSpecCode": "H((((senstate = sen_nominal_state) and limits) => (SENSTATE = sen_fault_state)))", "fretish": "FSM shall always satisfy if (senstate = sen_nominal_state & limits) then SENSTATE = sen_fault_state"},
+
+ 
+  
+{ "name": "FSM-013", "ptLTL": "(H (((senstate = sen_transition_state) & request) -> (SENSTATE = sen_nominal_state)))", "CoCoSpecCode": "H((((senstate = sen_transition_state) and request) => (SENSTATE = sen_nominal_state)))", "fretish": "FSM shall always satisfy if (senstate = sen_transition_state & request) then SENSTATE = sen_nominal_state"},
+
+ 
+  
+{ "name": "FSM-007", "ptLTL": "(H ((((state = ap_maneuver_state) & supported) & good) -> (STATE = ap_transition_state)))", "CoCoSpecCode": "H(((((state = ap_maneuver_state) and supported) and good) => (STATE = ap_transition_state)))", "fretish": "FSM shall always satisfy if (state = ap_maneuver_state & supported & good) then STATE = ap_transition_state"},
+
+ 
+  
+{ "name": "FSM-004", "ptLTL": "(H (((! good) & (state = ap_nominal_state)) -> (STATE = ap_maneuver_state)))", "CoCoSpecCode": "H(((not (good) and (state = ap_nominal_state)) => (STATE = ap_maneuver_state)))", "fretish": "FSM shall always satisfy if (! good & state = ap_nominal_state) then STATE = ap_maneuver_state"},
+
+ 
+  
+{ "name": "FSM-001", "ptLTL": "(H ((((limits & (! standby)) & (! apfail)) & supported) -> pullup))", "CoCoSpecCode": "H(((((limits and not (standby)) and not (apfail)) and supported) => pullup))", "fretish": "FSM  shall  always  satisfy if (limits & !standby & !apfail & supported) then pullup"},
+
+ 
+  
+{ "name": "FSM-006", "ptLTL": "(H ((((state = ap_maneuver_state) & standby) & good) -> (STATE = ap_standby_state)))", "CoCoSpecCode": "H(((((state = ap_maneuver_state) and standby) and good) => (STATE = ap_standby_state)))", "fretish": "FSM shall always satisfy if (state = ap_maneuver_state & standby & good) then STATE = ap_standby_state"}
+  
+ 
+]
+}
+}
+

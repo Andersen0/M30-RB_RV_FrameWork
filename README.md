@@ -9,9 +9,9 @@ Put together a framework for autonomous generation of monitors from natural lang
 The task builds upon previous work done by developers at NASA.
 
 ### Software developed by NASA, utilized in the framework:
-[FRET](https://github.com/NASA-SW-VnV/fret/tree/master)
+[FRET github](https://github.com/NASA-SW-VnV/fret/tree/master)
 
-[OGMA](https://github.com/nasa/ogma)
+[OGMA github](https://github.com/nasa/ogma)
 
 ## Workflow
 
