@@ -1,4 +1,7 @@
-This directory will contain all files in relation to FRET explicitly (e.g. import and export files)
+The purpose of this directory is to teach you how to use FRET correctly and therefore become a good person.
+This directory will contain all files in relation to FRET explicitly (e.g. import and export files).
+
+[FRET github](https://github.com/NASA-SW-VnV/fret/tree/master)
 
 ## Demonstrative files
 
