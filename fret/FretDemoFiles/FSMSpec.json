@@ -6,88 +6,88 @@
 "Internal_variables":
 [
 
+  
+{"name":"ap_maneuver_state", "type":"real", "assignmentLustre": "2.0;", "assignmentCopilot": "constant 2.0;"},
+
+
+  
+{"name":"ap_nominal_state", "type":"real", "assignmentLustre": "1.0;", "assignmentCopilot": "constant 1.0;"},
+
+
+  
+{"name":"ap_standby_state", "type":"real", "assignmentLustre": "3.0;", "assignmentCopilot": "constant 3.0;"},
+
+
+  
+{"name":"ap_transition_state", "type":"real", "assignmentLustre": "0.0;", "assignmentCopilot": "constant 0.0;"},
+
+
+  
+{"name":"sen_fault_state", "type":"real", "assignmentLustre": "2.0", "assignmentCopilot": "constant 2.0"},
+
+
+  
+{"name":"sen_nominal_state", "type":"real", "assignmentLustre": "0.0", "assignmentCopilot": "constant 0.0"},
+
+
+  
+{"name":"sen_transition_state", "type":"real", "assignmentLustre": "1.0", "assignmentCopilot": "constant 1.0"}
+ 
+
 ],
 
 "Other_variables":
 [
 
   
+  {"name":"SENSTATE", "type":"real"},
+ 
+
+  
+  {"name":"STATE", "type":"real"},
+ 
+
+  
   {"name":"apfail", "type":"bool"},
  
 
   
-  {"name":"request", "type":"real"},
+  {"name":"good", "type":"bool"},
  
 
+  
+  {"name":"limits", "type":"bool"},
+ 
 
   
-{"name":"ap_maneuver_state", "type":"int"},
+  {"name":"pullup", "type":"bool"},
+ 
 
- 
   
-{"name":"ap_nominal_state", "type":"real"},
+  {"name":"request", "type":"bool"},
+ 
 
- 
   
-{"name":"ap_standby_state", "type":"bool"},
+  {"name":"senstate", "type":"real"},
+ 
 
- 
   
-{"name":"ap_transition_state", "type":"int"},
+  {"name":"standby", "type":"bool"},
+ 
 
- 
   
-{"name":"good", "type":"bool"},
+  {"name":"state", "type":"real"},
+ 
 
- 
   
-{"name":"limits", "type":"real"},
+{"name":"supported", "type":"bool"}
 
- 
-  
-{"name":"sen_fault_state", "type":"bool"},
 
- 
-  
-{"name":"sen_nominal_state", "type":"int"},
 
- 
-  
-{"name":"sen_transition_state", "type":"int"},
-
- 
-  
-{"name":"senstate", "type":"int"},
-
- 
-  
-{"name":"state", "type":"real"},
-
- 
-  
-  {"name":"supported", "type":"bool"}
-  
- 
 ],
 
 "Functions":
 [
-
-
- {"name":"SENSTATE", "moduleName":""},
- 
-
-
- {"name":"STATE", "moduleName":""},
- 
-
-
- {"name":"pullup", "moduleName":""},
- 
-
-
-{"name":"standby", "moduleName":""}
-  
 
 ],
 
@@ -149,4 +149,3 @@
 ]
 }
 }
-
