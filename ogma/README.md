@@ -1,1 +1,16 @@
-The OGMA files have the following naming convention:
+# OGMA
+
+The purpose of this directory is to teach you how to use OGMA correctly and therefore become a better person.
+
+[OGMA github](https://github.com/nasa/ogma)
+
+## Demonstrative files
+
+The OgmaDemoFiles directory contains all the files that are being used for testing in the work-in-progress project.
+
+Of these files there are files that work as intended and are operational (_OP).
+Files that are not operational (_XOP) or have an error message to their name (_ERR) will be documented here:
+
+| File | Error Message |
+| ----------- | ----------- |
+| test_OP.hs  | Operational |
