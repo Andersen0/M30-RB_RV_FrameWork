@@ -1,0 +1,588 @@
+{
+    "requirements": [
+        {
+            "reqid": "green_return",
+            "parent_reqid": "green",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "Upon green_zone UV_Robot SHALL immediately satisfy (! yellow_zone & ! red_zone) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "regular",
+                "timing": "immediately",
+                "response": "satisfaction",
+                "variables": [
+                    "green_zone",
+                    "yellow_zone",
+                    "red_zone"
+                ],
+                "qualifier_word": "upon",
+                "pre_condition": "(green_zone)",
+                "regular_condition": "(green_zone)",
+                "conditionTextRange": [
+                    0,
+                    14
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    16,
+                    23
+                ],
+                "timingTextRange": [
+                    31,
+                    41
+                ],
+                "post_condition": "(( ! yellow_zone & ! red_zone ))",
+                "responseTextRange": [
+                    43,
+                    78
+                ],
+                "diagramVariables": "TC = <b><i>(green_zone)</i></b>, Response = <b><i>(( ! yellow_zone & ! red_zone ))</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval if <b><i>(green_zone)</i></b> is true and any point in the interval where <b><i>(green_zone)</i></b> becomes true (from false).\nREQUIRES: for every trigger, if trigger holds then RES also holds at the same time point.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_regular_immediately_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "regular_condition_unexp_pt": "green_zone",
+                "regular_condition_unexp_ft": "green_zone",
+                "regular_condition_SMV_pt": "green_zone",
+                "regular_condition_SMV_ft": "green_zone",
+                "post_condition_unexp_pt": "((! yellow_zone) & (! red_zone))",
+                "post_condition_unexp_ft": "((! yellow_zone) & (! red_zone))",
+                "post_condition_SMV_pt": "((! yellow_zone) & (! red_zone))",
+                "post_condition_SMV_ft": "((! yellow_zone) & (! red_zone))",
+                "ft_fetched": "((LAST V (((! $regular_condition_unexp_ft$) & ((! LAST) & (X $regular_condition_unexp_ft$))) -> (X $post_condition_unexp_ft$))) & ($regular_condition_unexp_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "((LAST V (((! green_zone) & ((! LAST) & (X green_zone))) -> (X ((! yellow_zone) & (! red_zone))))) & (green_zone -> ((! yellow_zone) & (! red_zone))))",
+                "pt_fetched": "(H (($regular_condition_unexp_pt$ & ((Y (! $regular_condition_unexp_pt$)) | FTP)) -> $post_condition_unexp_pt$))",
+                "pt": "(H ((green_zone & ((Y (! green_zone)) | FTP)) -> ((! yellow_zone) & (! red_zone))))",
+                "ptExpanded_fetched": "(H (($regular_condition_SMV_pt$ & (Z (! $regular_condition_SMV_pt$))) -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((green_zone & (Z (! green_zone))) -> ((! yellow_zone) & (! red_zone))))",
+                "CoCoSpecCode": "H(((green_zone and ZtoPre(not (green_zone))) => (not (yellow_zone) and not (red_zone))))",
+                "ftExpanded_fetched": "((LAST V (((! $regular_condition_SMV_ft$) & ((! LAST) & (X $regular_condition_SMV_ft$))) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "((LAST V (((! green_zone) & ((! LAST) & (X green_zone))) -> (X ((! yellow_zone) & (! red_zone))))) & (green_zone -> ((! yellow_zone) & (! red_zone))))",
+                "ftExpanded": "((LAST V (((! green_zone) & ((! LAST) & (X green_zone))) -> (X ((! yellow_zone) & (! red_zone))))) & (green_zone -> ((! yellow_zone) & (! red_zone))))",
+                "ftInfAUExpanded_fetched": "((G (((! $regular_condition_SMV_ft$) & (X $regular_condition_SMV_ft$)) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "((G (((! green_zone) & (X green_zone)) -> (X ((! yellow_zone) & (! red_zone))))) & (green_zone -> ((! yellow_zone) & (! red_zone))))",
+                "component": "UV_Robot"
+            },
+            "_id": "15facce0-cf2d-11ee-8913-95109fc5bd2d"
+        },
+        {
+            "reqid": "yellow_return",
+            "parent_reqid": "yellow",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "Upon yellow_zone UV_Robot SHALL immediately satisfy (! green_zone & ! red_zone) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "regular",
+                "timing": "immediately",
+                "response": "satisfaction",
+                "variables": [
+                    "yellow_zone",
+                    "green_zone",
+                    "red_zone"
+                ],
+                "qualifier_word": "upon",
+                "pre_condition": "(yellow_zone)",
+                "regular_condition": "(yellow_zone)",
+                "conditionTextRange": [
+                    0,
+                    15
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    17,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    42
+                ],
+                "post_condition": "(( ! green_zone & ! red_zone ))",
+                "responseTextRange": [
+                    44,
+                    78
+                ],
+                "diagramVariables": "TC = <b><i>(yellow_zone)</i></b>, Response = <b><i>(( ! green_zone & ! red_zone ))</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval if <b><i>(yellow_zone)</i></b> is true and any point in the interval where <b><i>(yellow_zone)</i></b> becomes true (from false).\nREQUIRES: for every trigger, if trigger holds then RES also holds at the same time point.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_regular_immediately_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "regular_condition_unexp_pt": "yellow_zone",
+                "regular_condition_unexp_ft": "yellow_zone",
+                "regular_condition_SMV_pt": "yellow_zone",
+                "regular_condition_SMV_ft": "yellow_zone",
+                "post_condition_unexp_pt": "((! green_zone) & (! red_zone))",
+                "post_condition_unexp_ft": "((! green_zone) & (! red_zone))",
+                "post_condition_SMV_pt": "((! green_zone) & (! red_zone))",
+                "post_condition_SMV_ft": "((! green_zone) & (! red_zone))",
+                "ft_fetched": "((LAST V (((! $regular_condition_unexp_ft$) & ((! LAST) & (X $regular_condition_unexp_ft$))) -> (X $post_condition_unexp_ft$))) & ($regular_condition_unexp_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "((LAST V (((! yellow_zone) & ((! LAST) & (X yellow_zone))) -> (X ((! green_zone) & (! red_zone))))) & (yellow_zone -> ((! green_zone) & (! red_zone))))",
+                "pt_fetched": "(H (($regular_condition_unexp_pt$ & ((Y (! $regular_condition_unexp_pt$)) | FTP)) -> $post_condition_unexp_pt$))",
+                "pt": "(H ((yellow_zone & ((Y (! yellow_zone)) | FTP)) -> ((! green_zone) & (! red_zone))))",
+                "ptExpanded_fetched": "(H (($regular_condition_SMV_pt$ & (Z (! $regular_condition_SMV_pt$))) -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((yellow_zone & (Z (! yellow_zone))) -> ((! green_zone) & (! red_zone))))",
+                "CoCoSpecCode": "H(((yellow_zone and ZtoPre(not (yellow_zone))) => (not (green_zone) and not (red_zone))))",
+                "ftExpanded_fetched": "((LAST V (((! $regular_condition_SMV_ft$) & ((! LAST) & (X $regular_condition_SMV_ft$))) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "((LAST V (((! yellow_zone) & ((! LAST) & (X yellow_zone))) -> (X ((! green_zone) & (! red_zone))))) & (yellow_zone -> ((! green_zone) & (! red_zone))))",
+                "ftExpanded": "((LAST V (((! yellow_zone) & ((! LAST) & (X yellow_zone))) -> (X ((! green_zone) & (! red_zone))))) & (yellow_zone -> ((! green_zone) & (! red_zone))))",
+                "ftInfAUExpanded_fetched": "((G (((! $regular_condition_SMV_ft$) & (X $regular_condition_SMV_ft$)) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "((G (((! yellow_zone) & (X yellow_zone)) -> (X ((! green_zone) & (! red_zone))))) & (yellow_zone -> ((! green_zone) & (! red_zone))))",
+                "component": "UV_Robot"
+            },
+            "_id": "2ce1fd70-cf2d-11ee-8913-95109fc5bd2d"
+        },
+        {
+            "reqid": "red_return",
+            "parent_reqid": "red",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "Upon red_zone UV_Robot SHALL immediately satisfy (! green_zone & ! yellow_zone) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "regular",
+                "timing": "immediately",
+                "response": "satisfaction",
+                "variables": [
+                    "red_zone",
+                    "green_zone",
+                    "yellow_zone"
+                ],
+                "qualifier_word": "upon",
+                "pre_condition": "(red_zone)",
+                "regular_condition": "(red_zone)",
+                "conditionTextRange": [
+                    0,
+                    12
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    14,
+                    21
+                ],
+                "timingTextRange": [
+                    29,
+                    39
+                ],
+                "post_condition": "(( ! green_zone & ! yellow_zone ))",
+                "responseTextRange": [
+                    41,
+                    78
+                ],
+                "diagramVariables": "TC = <b><i>(red_zone)</i></b>, Response = <b><i>(( ! green_zone & ! yellow_zone ))</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval if <b><i>(red_zone)</i></b> is true and any point in the interval where <b><i>(red_zone)</i></b> becomes true (from false).\nREQUIRES: for every trigger, if trigger holds then RES also holds at the same time point.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_regular_immediately_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "regular_condition_unexp_pt": "red_zone",
+                "regular_condition_unexp_ft": "red_zone",
+                "regular_condition_SMV_pt": "red_zone",
+                "regular_condition_SMV_ft": "red_zone",
+                "post_condition_unexp_pt": "((! green_zone) & (! yellow_zone))",
+                "post_condition_unexp_ft": "((! green_zone) & (! yellow_zone))",
+                "post_condition_SMV_pt": "((! green_zone) & (! yellow_zone))",
+                "post_condition_SMV_ft": "((! green_zone) & (! yellow_zone))",
+                "ft_fetched": "((LAST V (((! $regular_condition_unexp_ft$) & ((! LAST) & (X $regular_condition_unexp_ft$))) -> (X $post_condition_unexp_ft$))) & ($regular_condition_unexp_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "((LAST V (((! red_zone) & ((! LAST) & (X red_zone))) -> (X ((! green_zone) & (! yellow_zone))))) & (red_zone -> ((! green_zone) & (! yellow_zone))))",
+                "pt_fetched": "(H (($regular_condition_unexp_pt$ & ((Y (! $regular_condition_unexp_pt$)) | FTP)) -> $post_condition_unexp_pt$))",
+                "pt": "(H ((red_zone & ((Y (! red_zone)) | FTP)) -> ((! green_zone) & (! yellow_zone))))",
+                "ptExpanded_fetched": "(H (($regular_condition_SMV_pt$ & (Z (! $regular_condition_SMV_pt$))) -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((red_zone & (Z (! red_zone))) -> ((! green_zone) & (! yellow_zone))))",
+                "CoCoSpecCode": "H(((red_zone and ZtoPre(not (red_zone))) => (not (green_zone) and not (yellow_zone))))",
+                "ftExpanded_fetched": "((LAST V (((! $regular_condition_SMV_ft$) & ((! LAST) & (X $regular_condition_SMV_ft$))) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "((LAST V (((! red_zone) & ((! LAST) & (X red_zone))) -> (X ((! green_zone) & (! yellow_zone))))) & (red_zone -> ((! green_zone) & (! yellow_zone))))",
+                "ftExpanded": "((LAST V (((! red_zone) & ((! LAST) & (X red_zone))) -> (X ((! green_zone) & (! yellow_zone))))) & (red_zone -> ((! green_zone) & (! yellow_zone))))",
+                "ftInfAUExpanded_fetched": "((G (((! $regular_condition_SMV_ft$) & (X $regular_condition_SMV_ft$)) -> (X $post_condition_SMV_ft$))) & ($regular_condition_SMV_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "((G (((! red_zone) & (X red_zone)) -> (X ((! green_zone) & (! yellow_zone))))) & (red_zone -> ((! green_zone) & (! yellow_zone))))",
+                "component": "UV_Robot"
+            },
+            "_id": "3ac87e00-cf2d-11ee-8913-95109fc5bd2d"
+        },
+        {
+            "reqid": "yellow",
+            "parent_reqid": "hazard_level",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy yellow_zone <=> half_operational_state",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "yellow_zone",
+                    "half_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(yellow_zone <=> half_operational_state)",
+                "responseTextRange": [
+                    22,
+                    67
+                ],
+                "diagramVariables": "Response = <b><i>(yellow_zone <=> half_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "(yellow_zone <-> half_operational_state)",
+                "post_condition_unexp_ft": "(yellow_zone <-> half_operational_state)",
+                "post_condition_SMV_pt": "(yellow_zone <-> half_operational_state)",
+                "post_condition_SMV_ft": "(yellow_zone <-> half_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V (yellow_zone <-> half_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H (yellow_zone <-> half_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H (yellow_zone <-> half_operational_state))",
+                "CoCoSpecCode": "H((yellow_zone = half_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V (yellow_zone <-> half_operational_state))",
+                "ftExpanded": "(LAST V (yellow_zone <-> half_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G (yellow_zone <-> half_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "4e408880-c666-11ee-9556-3dd7f39aefea"
+        },
+        {
+            "reqid": "hazard_level",
+            "parent_reqid": "",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy red_zone xor yellow_zone xor green_zone",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "red_zone",
+                    "yellow_zone",
+                    "green_zone"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(red_zone xor yellow_zone xor green_zone)",
+                "responseTextRange": [
+                    22,
+                    68
+                ],
+                "diagramVariables": "Response = <b><i>(red_zone xor yellow_zone xor green_zone)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "((red_zone xor yellow_zone) xor green_zone)",
+                "post_condition_unexp_ft": "((red_zone xor yellow_zone) xor green_zone)",
+                "post_condition_SMV_pt": "((red_zone xor yellow_zone) xor green_zone)",
+                "post_condition_SMV_ft": "((red_zone xor yellow_zone) xor green_zone)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V ((red_zone xor yellow_zone) xor green_zone))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H ((red_zone xor yellow_zone) xor green_zone))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H ((red_zone xor yellow_zone) xor green_zone))",
+                "CoCoSpecCode": "H(((red_zone xor yellow_zone) xor green_zone))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V ((red_zone xor yellow_zone) xor green_zone))",
+                "ftExpanded": "(LAST V ((red_zone xor yellow_zone) xor green_zone))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G ((red_zone xor yellow_zone) xor green_zone))",
+                "component": "UV_Robot"
+            },
+            "_id": "63a86030-cf26-11ee-8913-95109fc5bd2d"
+        },
+        {
+            "reqid": "green",
+            "parent_reqid": "hazard_level",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy green_zone <=> full_operational_state",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "green_zone",
+                    "full_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(green_zone <=> full_operational_state)",
+                "responseTextRange": [
+                    22,
+                    66
+                ],
+                "diagramVariables": "Response = <b><i>(green_zone <=> full_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "(green_zone <-> full_operational_state)",
+                "post_condition_unexp_ft": "(green_zone <-> full_operational_state)",
+                "post_condition_SMV_pt": "(green_zone <-> full_operational_state)",
+                "post_condition_SMV_ft": "(green_zone <-> full_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V (green_zone <-> full_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H (green_zone <-> full_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H (green_zone <-> full_operational_state))",
+                "CoCoSpecCode": "H((green_zone = full_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V (green_zone <-> full_operational_state))",
+                "ftExpanded": "(LAST V (green_zone <-> full_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G (green_zone <-> full_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "9bb0fa30-cf0f-11ee-8755-c94b255c84d6"
+        },
+        {
+            "reqid": "red",
+            "parent_reqid": "hazard_level",
+            "project": "Master Thesis",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy red_zone <=> halt_operational_state",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "red_zone",
+                    "halt_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(red_zone <=> halt_operational_state)",
+                "responseTextRange": [
+                    22,
+                    64
+                ],
+                "diagramVariables": "Response = <b><i>(red_zone <=> halt_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "(red_zone <-> halt_operational_state)",
+                "post_condition_unexp_ft": "(red_zone <-> halt_operational_state)",
+                "post_condition_SMV_pt": "(red_zone <-> halt_operational_state)",
+                "post_condition_SMV_ft": "(red_zone <-> halt_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V (red_zone <-> halt_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H (red_zone <-> halt_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H (red_zone <-> halt_operational_state))",
+                "CoCoSpecCode": "H((red_zone = halt_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V (red_zone <-> halt_operational_state))",
+                "ftExpanded": "(LAST V (red_zone <-> halt_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G (red_zone <-> halt_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "9d035830-c666-11ee-9556-3dd7f39aefea"
+        }
+    ],
+    "variables": [
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "full_operational_state",
+            "reqs": [
+                "9bb0fa30-cf0f-11ee-8755-c94b255c84d6"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robotfull_operational_state"
+        },
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "green_zone",
+            "reqs": [
+                "15facce0-cf2d-11ee-8913-95109fc5bd2d",
+                "2ce1fd70-cf2d-11ee-8913-95109fc5bd2d",
+                "3ac87e00-cf2d-11ee-8913-95109fc5bd2d",
+                "63a86030-cf26-11ee-8913-95109fc5bd2d",
+                "9bb0fa30-cf0f-11ee-8755-c94b255c84d6"
+            ],
+            "dataType": "boolean",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robotgreen_zone"
+        },
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "half_operational_state",
+            "reqs": [
+                "4e408880-c666-11ee-9556-3dd7f39aefea"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robothalf_operational_state"
+        },
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "halt_operational_state",
+            "reqs": [
+                "9d035830-c666-11ee-9556-3dd7f39aefea"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robothalt_operational_state"
+        },
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "red_zone",
+            "reqs": [
+                "15facce0-cf2d-11ee-8913-95109fc5bd2d",
+                "2ce1fd70-cf2d-11ee-8913-95109fc5bd2d",
+                "3ac87e00-cf2d-11ee-8913-95109fc5bd2d",
+                "63a86030-cf26-11ee-8913-95109fc5bd2d",
+                "9d035830-c666-11ee-9556-3dd7f39aefea"
+            ],
+            "dataType": "boolean",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robotred_zone"
+        },
+        {
+            "project": "Master Thesis",
+            "component_name": "UV_Robot",
+            "variable_name": "yellow_zone",
+            "reqs": [
+                "15facce0-cf2d-11ee-8913-95109fc5bd2d",
+                "2ce1fd70-cf2d-11ee-8913-95109fc5bd2d",
+                "3ac87e00-cf2d-11ee-8913-95109fc5bd2d",
+                "4e408880-c666-11ee-9556-3dd7f39aefea",
+                "63a86030-cf26-11ee-8913-95109fc5bd2d"
+            ],
+            "dataType": "boolean",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "Master ThesisUV_Robotyellow_zone"
+        }
+    ]
+}
