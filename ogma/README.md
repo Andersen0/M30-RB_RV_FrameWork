@@ -1,5 +1,5 @@
 # OGMA
-push test
+
 The purpose of this directory is to teach you how to use OGMA correctly and therefore become a better person.
 This directory will contain all files and their accompanying instructions in relation to OGMA.
 
