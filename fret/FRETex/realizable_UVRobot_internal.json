@@ -1,0 +1,430 @@
+{
+    "requirements": [
+        {
+            "reqid": "worker",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While class=1 UV_Robot SHALL always satisfy (distance_to_target > 14 <=> state=0) & ((distance_to_target <=14 & distance_to_target > 7) <=> state=1) & (distance_to_target <= 7 <=> state=2)  ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "class",
+                    "distance_to_target",
+                    "state"
+                ],
+                "scope_mode": "(class = 1)",
+                "scopeTextRange": [
+                    0,
+                    12
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    14,
+                    21
+                ],
+                "timingTextRange": [
+                    29,
+                    34
+                ],
+                "post_condition": "(( distance_to_target > 14 <=> state = 0 ) & ( ( distance_to_target <= 14 & distance_to_target > 7 ) <=> state = 1 ) & ( distance_to_target <= 7 <=> state = 2 ))",
+                "responseTextRange": [
+                    36,
+                    187
+                ],
+                "diagramVariables": "M = <b><i>(class = 1)</i></b>, Response = <b><i>(( distance_to_target > 14 <=> state = 0 ) & ( ( distance_to_target <= 14 & distance_to_target > 7 ) <=> state = 1 ) & ( distance_to_target <= 7 <=> state = 2 ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(class = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(class = 1)",
+                "scope_mode_ft": "(class = 1)",
+                "post_condition_unexp_pt": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
+                "post_condition_unexp_ft": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
+                "post_condition_SMV_pt": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
+                "post_condition_SMV_ft": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "CoCoSpecCode": "H(((class = 1) => ((((distance_to_target > 14) = (state = 0)) and (((distance_to_target <= 14) and (distance_to_target > 7)) = (state = 1))) and ((distance_to_target <= 7) = (state = 2)))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ftExpanded": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "component": "UV_Robot"
+            },
+            "_id": "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+        },
+        {
+            "reqid": "green",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy state=0 <=> full_operational_state.  ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "state",
+                    "full_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(state = 0 <=> full_operational_state)",
+                "responseTextRange": [
+                    22,
+                    63
+                ],
+                "diagramVariables": "Response = <b><i>(state = 0 <=> full_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "((state = 0) <-> full_operational_state)",
+                "post_condition_unexp_ft": "((state = 0) <-> full_operational_state)",
+                "post_condition_SMV_pt": "((state = 0) <-> full_operational_state)",
+                "post_condition_SMV_ft": "((state = 0) <-> full_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V ((state = 0) <-> full_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H ((state = 0) <-> full_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H ((state = 0) <-> full_operational_state))",
+                "CoCoSpecCode": "H(((state = 0) = full_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V ((state = 0) <-> full_operational_state))",
+                "ftExpanded": "(LAST V ((state = 0) <-> full_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G ((state = 0) <-> full_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "cd079470-cfcf-11ee-8f19-2ff6015e391d"
+        },
+        {
+            "reqid": "yellow",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy state=1 <=> half_operational_state.  ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "state",
+                    "half_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(state = 1 <=> half_operational_state)",
+                "responseTextRange": [
+                    22,
+                    63
+                ],
+                "diagramVariables": "Response = <b><i>(state = 1 <=> half_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "((state = 1) <-> half_operational_state)",
+                "post_condition_unexp_ft": "((state = 1) <-> half_operational_state)",
+                "post_condition_SMV_pt": "((state = 1) <-> half_operational_state)",
+                "post_condition_SMV_ft": "((state = 1) <-> half_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V ((state = 1) <-> half_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H ((state = 1) <-> half_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H ((state = 1) <-> half_operational_state))",
+                "CoCoSpecCode": "H(((state = 1) = half_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V ((state = 1) <-> half_operational_state))",
+                "ftExpanded": "(LAST V ((state = 1) <-> half_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G ((state = 1) <-> half_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "d5aa9410-cfcf-11ee-8f19-2ff6015e391d"
+        },
+        {
+            "reqid": "red",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "UV_Robot SHALL always satisfy state=2 <=> halt_operational_state.  ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "state",
+                    "halt_operational_state"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    7
+                ],
+                "timingTextRange": [
+                    15,
+                    20
+                ],
+                "post_condition": "(state = 2 <=> halt_operational_state)",
+                "responseTextRange": [
+                    22,
+                    63
+                ],
+                "diagramVariables": "Response = <b><i>(state = 2 <=> halt_operational_state)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "((state = 2) <-> halt_operational_state)",
+                "post_condition_unexp_ft": "((state = 2) <-> halt_operational_state)",
+                "post_condition_SMV_pt": "((state = 2) <-> halt_operational_state)",
+                "post_condition_SMV_ft": "((state = 2) <-> halt_operational_state)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V ((state = 2) <-> halt_operational_state))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H ((state = 2) <-> halt_operational_state))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H ((state = 2) <-> halt_operational_state))",
+                "CoCoSpecCode": "H(((state = 2) = halt_operational_state))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V ((state = 2) <-> halt_operational_state))",
+                "ftExpanded": "(LAST V ((state = 2) <-> halt_operational_state))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G ((state = 2) <-> halt_operational_state))",
+                "component": "UV_Robot"
+            },
+            "_id": "dfc20b40-cfcf-11ee-8f19-2ff6015e391d"
+        },
+        {
+            "reqid": "dtt-assumption",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "The  UV_Robot  shall always satisfy  distance_to_target >= 0 ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "distance_to_target"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    12
+                ],
+                "timingTextRange": [
+                    21,
+                    26
+                ],
+                "post_condition": "(distance_to_target >= 0)",
+                "responseTextRange": [
+                    28,
+                    59
+                ],
+                "diagramVariables": "Response = <b><i>(distance_to_target >= 0)</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "(distance_to_target >= 0)",
+                "post_condition_unexp_ft": "(distance_to_target >= 0)",
+                "post_condition_SMV_pt": "(distance_to_target >= 0)",
+                "post_condition_SMV_ft": "(distance_to_target >= 0)",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V (distance_to_target >= 0))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H (distance_to_target >= 0))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H (distance_to_target >= 0))",
+                "CoCoSpecCode": "H((distance_to_target >= 0))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V (distance_to_target >= 0))",
+                "ftExpanded": "(LAST V (distance_to_target >= 0))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G (distance_to_target >= 0))",
+                "component": "UV_Robot"
+            },
+            "_id": "ec394790-cfd3-11ee-8f19-2ff6015e391d"
+        }
+    ],
+    "variables": [
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "class",
+            "reqs": [
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "integer",
+            "idType": "Internal",
+            "moduleName": "",
+            "description": "",
+            "assignment": "2;",
+            "copilotAssignment": "constant 2;",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robotclass"
+        },
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "distance_to_target",
+            "reqs": [
+                "ec394790-cfd3-11ee-8f19-2ff6015e391d",
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "unsigned integer",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robotdistance_to_target"
+        },
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "full_operational_state",
+            "reqs": [
+                "cd079470-cfcf-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robotfull_operational_state"
+        },
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "half_operational_state",
+            "reqs": [
+                "d5aa9410-cfcf-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robothalf_operational_state"
+        },
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "halt_operational_state",
+            "reqs": [
+                "dfc20b40-cfcf-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robothalt_operational_state"
+        },
+        {
+            "project": "UV_Robot_internal",
+            "component_name": "UV_Robot",
+            "variable_name": "state",
+            "reqs": [
+                "cd079470-cfcf-11ee-8f19-2ff6015e391d",
+                "d5aa9410-cfcf-11ee-8f19-2ff6015e391d",
+                "dfc20b40-cfcf-11ee-8f19-2ff6015e391d",
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+            ],
+            "dataType": "integer",
+            "idType": "Internal",
+            "moduleName": "",
+            "description": "",
+            "assignment": "2;",
+            "copilotAssignment": "constant 2;",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "UV_Robot_internalUV_Robotstate"
+        }
+    ]
+}
