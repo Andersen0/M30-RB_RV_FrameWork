@@ -1,6 +1,64 @@
 {
     "requirements": [
         {
+            "reqid": "class-assumption",
+            "parent_reqid": "",
+            "project": "UV_Robot_internal",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "The  UV_Robot  shall always satisfy  (class=0 xor class=1 xor class=2 xor class=3) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "null"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "class"
+                ],
+                "component_name": "UV_Robot",
+                "componentTextRange": [
+                    0,
+                    12
+                ],
+                "timingTextRange": [
+                    21,
+                    26
+                ],
+                "post_condition": "(( class = 0 xor class = 1 xor class = 2 xor class = 3 ))",
+                "responseTextRange": [
+                    28,
+                    81
+                ],
+                "diagramVariables": "Response = <b><i>(( class = 0 xor class = 1 xor class = 2 xor class = 3 ))</i></b>.",
+                "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
+                "scope_mode_pt": "BAD_PT",
+                "scope_mode_ft": "BAD_FT",
+                "post_condition_unexp_pt": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
+                "post_condition_unexp_ft": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
+                "post_condition_SMV_pt": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
+                "post_condition_SMV_ft": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
+                "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
+                "ft": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "pt_fetched": "(H $post_condition_unexp_pt$)",
+                "pt": "(H ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
+                "ptExpanded": "(H ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "CoCoSpecCode": "H(((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
+                "ftExpandedUnoptimized": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ftExpanded": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
+                "ftInfAUExpanded": "(G ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "component": "UV_Robot"
+            },
+            "_id": "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7"
+        },
+        {
             "reqid": "worker",
             "parent_reqid": "",
             "project": "UV_Robot_internal",
@@ -307,7 +365,8 @@
             "component_name": "UV_Robot",
             "variable_name": "class",
             "reqs": [
-                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d",
+                "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7"
             ],
             "dataType": "integer",
             "idType": "Internal",
@@ -327,8 +386,8 @@
             "component_name": "UV_Robot",
             "variable_name": "distance_to_target",
             "reqs": [
-                "ec394790-cfd3-11ee-8f19-2ff6015e391d",
-                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d",
+                "ec394790-cfd3-11ee-8f19-2ff6015e391d"
             ],
             "dataType": "unsigned integer",
             "idType": "Input",
@@ -408,10 +467,10 @@
             "component_name": "UV_Robot",
             "variable_name": "state",
             "reqs": [
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d",
                 "cd079470-cfcf-11ee-8f19-2ff6015e391d",
                 "d5aa9410-cfcf-11ee-8f19-2ff6015e391d",
-                "dfc20b40-cfcf-11ee-8f19-2ff6015e391d",
-                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+                "dfc20b40-cfcf-11ee-8f19-2ff6015e391d"
             ],
             "dataType": "integer",
             "idType": "Internal",
