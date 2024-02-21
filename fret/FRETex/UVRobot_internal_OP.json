@@ -365,15 +365,15 @@
             "component_name": "UV_Robot",
             "variable_name": "class",
             "reqs": [
-                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d",
-                "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7"
+                "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7",
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
             ],
             "dataType": "integer",
             "idType": "Internal",
             "moduleName": "",
             "description": "",
-            "assignment": "2;",
-            "copilotAssignment": "constant 2;",
+            "assignment": "3;",
+            "copilotAssignment": "constant 3;",
             "modeRequirement": "",
             "modeldoc": false,
             "modeldoc_id": "",
