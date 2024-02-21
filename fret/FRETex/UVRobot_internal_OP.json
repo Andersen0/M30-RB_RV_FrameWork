@@ -6,7 +6,7 @@
             "project": "UV_Robot_internal",
             "rationale": "",
             "comments": "",
-            "fulltext": "The  UV_Robot  shall always satisfy  (class=0 xor class=1 xor class=2 xor class=3) ",
+            "fulltext": "The  UV_Robot  shall always satisfy  (classifier=0 xor classifier=1 xor classifier=2 xor classifier=3) ",
             "status": "",
             "semantics": {
                 "type": "nasa",
@@ -17,7 +17,7 @@
                 "timing": "always",
                 "response": "satisfaction",
                 "variables": [
-                    "class"
+                    "classifier"
                 ],
                 "component_name": "UV_Robot",
                 "componentTextRange": [
@@ -28,32 +28,32 @@
                     21,
                     26
                 ],
-                "post_condition": "(( class = 0 xor class = 1 xor class = 2 xor class = 3 ))",
+                "post_condition": "(( classifier = 0 xor classifier = 1 xor classifier = 2 xor classifier = 3 ))",
                 "responseTextRange": [
                     28,
-                    81
+                    101
                 ],
-                "diagramVariables": "Response = <b><i>(( class = 0 xor class = 1 xor class = 2 xor class = 3 ))</i></b>.",
+                "diagramVariables": "Response = <b><i>(( classifier = 0 xor classifier = 1 xor classifier = 2 xor classifier = 3 ))</i></b>.",
                 "description": "ENFORCED: in the interval defined by the entire execution.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
                 "diagram": "_media/user-interface/examples/svgDiagrams/null_null_always_satisfaction.svg",
                 "scope_mode_pt": "BAD_PT",
                 "scope_mode_ft": "BAD_FT",
-                "post_condition_unexp_pt": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
-                "post_condition_unexp_ft": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
-                "post_condition_SMV_pt": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
-                "post_condition_SMV_ft": "((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3))",
+                "post_condition_unexp_pt": "((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3))",
+                "post_condition_unexp_ft": "((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3))",
+                "post_condition_SMV_pt": "((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3))",
+                "post_condition_SMV_ft": "((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3))",
                 "ft_fetched": "(LAST V $post_condition_unexp_ft$)",
-                "ft": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ft": "(LAST V ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
                 "pt_fetched": "(H $post_condition_unexp_pt$)",
-                "pt": "(H ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "pt": "(H ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
                 "ptExpanded_fetched": "(H $post_condition_SMV_pt$)",
-                "ptExpanded": "(H ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
-                "CoCoSpecCode": "H(((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ptExpanded": "(H ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
+                "CoCoSpecCode": "H(((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
                 "ftExpanded_fetched": "(LAST V $post_condition_SMV_ft$)",
-                "ftExpandedUnoptimized": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
-                "ftExpanded": "(LAST V ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ftExpandedUnoptimized": "(LAST V ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
+                "ftExpanded": "(LAST V ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
                 "ftInfAUExpanded_fetched": "(G $post_condition_SMV_ft$)",
-                "ftInfAUExpanded": "(G ((((class = 0) xor (class = 1)) xor (class = 2)) xor (class = 3)))",
+                "ftInfAUExpanded": "(G ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))",
                 "component": "UV_Robot"
             },
             "_id": "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7"
@@ -64,7 +64,7 @@
             "project": "UV_Robot_internal",
             "rationale": "",
             "comments": "",
-            "fulltext": "While class=1 UV_Robot SHALL always satisfy (distance_to_target > 14 <=> state=0) & ((distance_to_target <=14 & distance_to_target > 7) <=> state=1) & (distance_to_target <= 7 <=> state=2)  ",
+            "fulltext": "While classifier=1 UV_Robot SHALL always satisfy (distance_to_target > 14 <=> state=0) & ((distance_to_target <=14 & distance_to_target > 7) <=> state=1) & (distance_to_target <= 7 <=> state=2)  ",
             "status": "",
             "semantics": {
                 "type": "nasa",
@@ -75,50 +75,50 @@
                 "timing": "always",
                 "response": "satisfaction",
                 "variables": [
-                    "class",
+                    "classifier",
                     "distance_to_target",
                     "state"
                 ],
-                "scope_mode": "(class = 1)",
+                "scope_mode": "(classifier = 1)",
                 "scopeTextRange": [
                     0,
-                    12
+                    17
                 ],
                 "component_name": "UV_Robot",
                 "componentTextRange": [
-                    14,
-                    21
+                    19,
+                    26
                 ],
                 "timingTextRange": [
-                    29,
-                    34
+                    34,
+                    39
                 ],
                 "post_condition": "(( distance_to_target > 14 <=> state = 0 ) & ( ( distance_to_target <= 14 & distance_to_target > 7 ) <=> state = 1 ) & ( distance_to_target <= 7 <=> state = 2 ))",
                 "responseTextRange": [
-                    36,
-                    187
+                    41,
+                    192
                 ],
-                "diagramVariables": "M = <b><i>(class = 1)</i></b>, Response = <b><i>(( distance_to_target > 14 <=> state = 0 ) & ( ( distance_to_target <= 14 & distance_to_target > 7 ) <=> state = 1 ) & ( distance_to_target <= 7 <=> state = 2 ))</i></b>.",
-                "description": "ENFORCED: in every interval where <b><i>(class = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagramVariables": "M = <b><i>(classifier = 1)</i></b>, Response = <b><i>(( distance_to_target > 14 <=> state = 0 ) & ( ( distance_to_target <= 14 & distance_to_target > 7 ) <=> state = 1 ) & ( distance_to_target <= 7 <=> state = 2 ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
                 "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
-                "scope_mode_pt": "(class = 1)",
-                "scope_mode_ft": "(class = 1)",
+                "scope_mode_pt": "(classifier = 1)",
+                "scope_mode_ft": "(classifier = 1)",
                 "post_condition_unexp_pt": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
                 "post_condition_unexp_ft": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
                 "post_condition_SMV_pt": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
                 "post_condition_SMV_ft": "((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))",
                 "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
-                "ft": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ft": "(LAST V ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
                 "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
-                "pt": "(H ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "pt": "(H ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
                 "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
-                "ptExpanded": "(H ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
-                "CoCoSpecCode": "H(((class = 1) => ((((distance_to_target > 14) = (state = 0)) and (((distance_to_target <= 14) and (distance_to_target > 7)) = (state = 1))) and ((distance_to_target <= 7) = (state = 2)))))",
+                "ptExpanded": "(H ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "CoCoSpecCode": "H(((classifier = 1) => ((((distance_to_target > 14) = (state = 0)) and (((distance_to_target <= 14) and (distance_to_target > 7)) = (state = 1))) and ((distance_to_target <= 7) = (state = 2)))))",
                 "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
-                "ftExpandedUnoptimized": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
-                "ftExpanded": "(LAST V ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ftExpanded": "(LAST V ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
                 "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
-                "ftInfAUExpanded": "(G ((class = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
+                "ftInfAUExpanded": "(G ((classifier = 1) -> ((((distance_to_target > 14) <-> (state = 0)) & (((distance_to_target <= 14) & (distance_to_target > 7)) <-> (state = 1))) & ((distance_to_target <= 7) <-> (state = 2)))))",
                 "component": "UV_Robot"
             },
             "_id": "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
@@ -363,23 +363,23 @@
         {
             "project": "UV_Robot_internal",
             "component_name": "UV_Robot",
-            "variable_name": "class",
+            "variable_name": "classifier",
             "reqs": [
-                "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7",
-                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d"
+                "4d3a4740-cfd6-11ee-8f19-2ff6015e391d",
+                "4c1da3f0-cfe7-11ee-be7c-dd43cdf522f7"
             ],
-            "dataType": "integer",
-            "idType": "Internal",
+            "dataType": "",
+            "idType": "",
             "moduleName": "",
             "description": "",
-            "assignment": "3;",
-            "copilotAssignment": "constant 3;",
+            "assignment": "",
+            "copilotAssignment": "",
             "modeRequirement": "",
             "modeldoc": false,
-            "modeldoc_id": "",
             "modelComponent": "",
-            "completed": true,
-            "_id": "UV_Robot_internalUV_Robotclass"
+            "modeldoc_id": "",
+            "completed": false,
+            "_id": "UV_Robot_internalUV_Robotclassifier"
         },
         {
             "project": "UV_Robot_internal",
