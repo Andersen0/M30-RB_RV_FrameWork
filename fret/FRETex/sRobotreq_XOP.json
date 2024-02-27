@@ -1,0 +1,828 @@
+{
+    "requirements": [
+        {
+            "reqid": "Req-101",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=1 sRobot shall always satisfy dgt_14 => (!pause & alert & !UVC_pause)",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_14",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 1)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(dgt_14 => ( ! pause & alert & ! UVC_pause ))",
+                "responseTextRange": [
+                    39,
+                    85
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 1)</i></b>, Response = <b><i>(dgt_14 => ( ! pause & alert & ! UVC_pause ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 1)",
+                "scope_mode_ft": "(classifier = 1)",
+                "post_condition_unexp_pt": "(dgt_14 -> (((! pause) & alert) & (! UVC_pause)))",
+                "post_condition_unexp_ft": "(dgt_14 -> (((! pause) & alert) & (! UVC_pause)))",
+                "post_condition_SMV_pt": "(dgt_14 -> (((! pause) & alert) & (! UVC_pause)))",
+                "post_condition_SMV_ft": "(dgt_14 -> (((! pause) & alert) & (! UVC_pause)))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "CoCoSpecCode": "H(((classifier = 1) => (dgt_14 => ((not (pause) and alert) and not (UVC_pause)))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "ftExpanded": "(LAST V ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 1) -> (dgt_14 -> (((! pause) & alert) & (! UVC_pause)))))",
+                "component": "sRobot"
+            },
+            "_id": "03a930e0-d54a-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "dtt-assumption",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "In transitionRow mode sRobot shall always satisfy distance_to_target <= 30 & distance_to_target >=0 ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "transitionRow",
+                    "distance_to_target"
+                ],
+                "scope_mode": "transitionRow",
+                "scopeTextRange": [
+                    0,
+                    20
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    22,
+                    27
+                ],
+                "timingTextRange": [
+                    35,
+                    40
+                ],
+                "post_condition": "(distance_to_target <= 30 & distance_to_target >= 0)",
+                "responseTextRange": [
+                    42,
+                    98
+                ],
+                "diagramVariables": "M = <b><i>transitionRow</i></b>, Response = <b><i>(distance_to_target <= 30 & distance_to_target >= 0)</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>transitionRow</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "transitionRow",
+                "scope_mode_ft": "transitionRow",
+                "post_condition_unexp_pt": "((distance_to_target <= 30) & (distance_to_target >= 0))",
+                "post_condition_unexp_ft": "((distance_to_target <= 30) & (distance_to_target >= 0))",
+                "post_condition_SMV_pt": "((distance_to_target <= 30) & (distance_to_target >= 0))",
+                "post_condition_SMV_ft": "((distance_to_target <= 30) & (distance_to_target >= 0))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "CoCoSpecCode": "H((transitionRow => ((distance_to_target <= 30) and (distance_to_target >= 0))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "ftExpanded": "(LAST V (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G (transitionRow -> ((distance_to_target <= 30) & (distance_to_target >= 0))))",
+                "component": "sRobot"
+            },
+            "_id": "1c66d270-d155-11ee-8c07-63c7c629ab05"
+        },
+        {
+            "reqid": "Req-102",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=1 sRobot shall always satisfy (! dgt_14 & dgt_7 => (pause & alert & !UVC_pause)) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_14",
+                    "dgt_7",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 1)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(( ! dgt_14 & dgt_7 => ( pause & alert & ! UVC_pause ) ))",
+                "responseTextRange": [
+                    39,
+                    96
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 1)</i></b>, Response = <b><i>(( ! dgt_14 & dgt_7 => ( pause & alert & ! UVC_pause ) ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 1)",
+                "scope_mode_ft": "(classifier = 1)",
+                "post_condition_unexp_pt": "(((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_unexp_ft": "(((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_SMV_pt": "(((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_SMV_ft": "(((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "CoCoSpecCode": "H(((classifier = 1) => ((not (dgt_14) and dgt_7) => ((pause and alert) and not (UVC_pause)))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "ftExpanded": "(LAST V ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 1) -> (((! dgt_14) & dgt_7) -> ((pause & alert) & (! UVC_pause)))))",
+                "component": "sRobot"
+            },
+            "_id": "25e67320-d54a-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "Req-201",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=2 sRobot shall always satisfy dgt_21 => (pause & alert & !UVC_pause) ",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_21",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 2)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(dgt_21 => ( pause & alert & ! UVC_pause ))",
+                "responseTextRange": [
+                    39,
+                    84
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 2)</i></b>, Response = <b><i>(dgt_21 => ( pause & alert & ! UVC_pause ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 2)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 2)",
+                "scope_mode_ft": "(classifier = 2)",
+                "post_condition_unexp_pt": "(dgt_21 -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_unexp_ft": "(dgt_21 -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_SMV_pt": "(dgt_21 -> ((pause & alert) & (! UVC_pause)))",
+                "post_condition_SMV_ft": "(dgt_21 -> ((pause & alert) & (! UVC_pause)))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "CoCoSpecCode": "H(((classifier = 2) => (dgt_21 => ((pause and alert) and not (UVC_pause)))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "ftExpanded": "(LAST V ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 2) -> (dgt_21 -> ((pause & alert) & (! UVC_pause)))))",
+                "component": "sRobot"
+            },
+            "_id": "260465f0-d54b-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "Req-103",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=1 sRobot shall always satisfy (! dgt_7 => (pause & alert & UVC_pause))",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_7",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 1)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(( ! dgt_7 => ( pause & alert & UVC_pause ) ))",
+                "responseTextRange": [
+                    39,
+                    86
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 1)</i></b>, Response = <b><i>(( ! dgt_7 => ( pause & alert & UVC_pause ) ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 1)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 1)",
+                "scope_mode_ft": "(classifier = 1)",
+                "post_condition_unexp_pt": "((! dgt_7) -> ((pause & alert) & UVC_pause))",
+                "post_condition_unexp_ft": "((! dgt_7) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_pt": "((! dgt_7) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_ft": "((! dgt_7) -> ((pause & alert) & UVC_pause))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "CoCoSpecCode": "H(((classifier = 1) => (not (dgt_7) => ((pause and alert) and UVC_pause))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "ftExpanded": "(LAST V ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 1) -> ((! dgt_7) -> ((pause & alert) & UVC_pause))))",
+                "component": "sRobot"
+            },
+            "_id": "32af0090-d54a-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "Req-202",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=2 sRobot shall always satisfy !dgt_21 & dgt_14 => (pause & alert & UVC_pause)",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_21",
+                    "dgt_14",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 2)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(! dgt_21 & dgt_14 => ( pause & alert & UVC_pause ))",
+                "responseTextRange": [
+                    39,
+                    93
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 2)</i></b>, Response = <b><i>(! dgt_21 & dgt_14 => ( pause & alert & UVC_pause ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 2)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 2)",
+                "scope_mode_ft": "(classifier = 2)",
+                "post_condition_unexp_pt": "(((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_unexp_ft": "(((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_pt": "(((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_ft": "(((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "CoCoSpecCode": "H(((classifier = 2) => ((not (dgt_21) and dgt_14) => ((pause and alert) and UVC_pause))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ftExpanded": "(LAST V ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 2) -> (((! dgt_21) & dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "component": "sRobot"
+            },
+            "_id": "377b6040-d54b-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "Req-203",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "While classifier=2 sRobot shall always satisfy !dgt_14 => (pause & alert & UVC_pause)",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "classifier",
+                    "dgt_14",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "(classifier = 2)",
+                "scopeTextRange": [
+                    0,
+                    17
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    19,
+                    24
+                ],
+                "timingTextRange": [
+                    32,
+                    37
+                ],
+                "post_condition": "(! dgt_14 => ( pause & alert & UVC_pause ))",
+                "responseTextRange": [
+                    39,
+                    84
+                ],
+                "diagramVariables": "M = <b><i>(classifier = 2)</i></b>, Response = <b><i>(! dgt_14 => ( pause & alert & UVC_pause ))</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>(classifier = 2)</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "(classifier = 2)",
+                "scope_mode_ft": "(classifier = 2)",
+                "post_condition_unexp_pt": "((! dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_unexp_ft": "((! dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_pt": "((! dgt_14) -> ((pause & alert) & UVC_pause))",
+                "post_condition_SMV_ft": "((! dgt_14) -> ((pause & alert) & UVC_pause))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "CoCoSpecCode": "H(((classifier = 2) => (not (dgt_14) => ((pause and alert) and UVC_pause))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ftExpanded": "(LAST V ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G ((classifier = 2) -> ((! dgt_14) -> ((pause & alert) & UVC_pause))))",
+                "component": "sRobot"
+            },
+            "_id": "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+        },
+        {
+            "reqid": "Req-001",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "In transitionRow mode whenever classifier=0 sRobot SHALL always satisfy !pause & !alert & !UVC_pause",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "noTrigger",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "transitionRow",
+                    "classifier",
+                    "pause",
+                    "alert",
+                    "UVC_pause"
+                ],
+                "scope_mode": "transitionRow",
+                "scopeTextRange": [
+                    0,
+                    20
+                ],
+                "qualifier_word": "whenever",
+                "pre_condition": "(classifier = 0)",
+                "regular_condition": "(classifier = 0)",
+                "conditionTextRange": [
+                    22,
+                    42
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    44,
+                    49
+                ],
+                "timingTextRange": [
+                    57,
+                    62
+                ],
+                "post_condition": "(! pause & ! alert & ! UVC_pause)",
+                "responseTextRange": [
+                    64,
+                    99
+                ],
+                "diagramVariables": "M = <b><i>transitionRow</i></b>, CC = <b><i>(classifier = 0)</i></b>, Response = <b><i>(! pause & ! alert & ! UVC_pause)</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>transitionRow</i></b> holds.\nTRIGGER: every point in the interval where <b><i>(classifier = 0)</i></b> is true.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_noTrigger_always_satisfaction.svg",
+                "scope_mode_pt": "transitionRow",
+                "scope_mode_ft": "transitionRow",
+                "regular_condition_unexp_pt": "(classifier = 0)",
+                "regular_condition_unexp_ft": "(classifier = 0)",
+                "regular_condition_SMV_pt": "(classifier = 0)",
+                "regular_condition_SMV_ft": "(classifier = 0)",
+                "post_condition_unexp_pt": "(((! pause) & (! alert)) & (! UVC_pause))",
+                "post_condition_unexp_ft": "(((! pause) & (! alert)) & (! UVC_pause))",
+                "post_condition_SMV_pt": "(((! pause) & (! alert)) & (! UVC_pause))",
+                "post_condition_SMV_ft": "(((! pause) & (! alert)) & (! UVC_pause))",
+                "ft_fetched": "((LAST V ((! (Fin_$scope_mode_ft$ & (! LAST))) | (X ((Lin_$scope_mode_ft$ | LAST) V ($regular_condition_unexp_ft$ -> ((Lin_$scope_mode_ft$ | LAST) V $post_condition_unexp_ft$)))))) & ($scope_mode_ft$ -> ((Lin_$scope_mode_ft$ | LAST) V ($regular_condition_unexp_ft$ -> ((Lin_$scope_mode_ft$ | LAST) V $post_condition_unexp_ft$)))))",
+                "ft": "((LAST V ((! (Fin_transitionRow & (! LAST))) | (X ((Lin_transitionRow | LAST) V ((classifier = 0) -> ((Lin_transitionRow | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))) & (transitionRow -> ((Lin_transitionRow | LAST) V ((classifier = 0) -> ((Lin_transitionRow | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))",
+                "pt_fetched": "((H (Lin_$scope_mode_pt$ -> (Y ((((! $regular_condition_unexp_pt$) S ((! $regular_condition_unexp_pt$) & Fin_$scope_mode_pt$)) | $post_condition_unexp_pt$) S ((((! $regular_condition_unexp_pt$) S ((! $regular_condition_unexp_pt$) & Fin_$scope_mode_pt$)) | $post_condition_unexp_pt$) & Fin_$scope_mode_pt$))))) & (((! Lin_$scope_mode_pt$) S ((! Lin_$scope_mode_pt$) & Fin_$scope_mode_pt$)) -> ((((! $regular_condition_unexp_pt$) S ((! $regular_condition_unexp_pt$) & Fin_$scope_mode_pt$)) | $post_condition_unexp_pt$) S ((((! $regular_condition_unexp_pt$) S ((! $regular_condition_unexp_pt$) & Fin_$scope_mode_pt$)) | $post_condition_unexp_pt$) & Fin_$scope_mode_pt$))))",
+                "pt": "((H (Lin_transitionRow -> (Y ((((! (classifier = 0)) S ((! (classifier = 0)) & Fin_transitionRow)) | (((! pause) & (! alert)) & (! UVC_pause))) S ((((! (classifier = 0)) S ((! (classifier = 0)) & Fin_transitionRow)) | (((! pause) & (! alert)) & (! UVC_pause))) & Fin_transitionRow))))) & (((! Lin_transitionRow) S ((! Lin_transitionRow) & Fin_transitionRow)) -> ((((! (classifier = 0)) S ((! (classifier = 0)) & Fin_transitionRow)) | (((! pause) & (! alert)) & (! UVC_pause))) S ((((! (classifier = 0)) S ((! (classifier = 0)) & Fin_transitionRow)) | (((! pause) & (! alert)) & (! UVC_pause))) & Fin_transitionRow))))",
+                "ptExpanded_fetched": "((H (((! $scope_mode_pt$) & (Y $scope_mode_pt$)) -> (Y ((((! $regular_condition_SMV_pt$) S ((! $regular_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$))))) | $post_condition_SMV_pt$) S ((((! $regular_condition_SMV_pt$) S ((! $regular_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$))))) | $post_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$)))))))) & (((! ((! $scope_mode_pt$) & (Y $scope_mode_pt$))) S ((! ((! $scope_mode_pt$) & (Y $scope_mode_pt$))) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$))))) -> ((((! $regular_condition_SMV_pt$) S ((! $regular_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$))))) | $post_condition_SMV_pt$) S ((((! $regular_condition_SMV_pt$) S ((! $regular_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$))))) | $post_condition_SMV_pt$) & ($scope_mode_pt$ & (Z (! $scope_mode_pt$)))))))",
+                "ptExpanded": "((H (((! transitionRow) & (Y transitionRow)) -> (Y ((((! (classifier = 0)) S ((! (classifier = 0)) & (transitionRow & (Z (! transitionRow))))) | (((! pause) & (! alert)) & (! UVC_pause))) S ((((! (classifier = 0)) S ((! (classifier = 0)) & (transitionRow & (Z (! transitionRow))))) | (((! pause) & (! alert)) & (! UVC_pause))) & (transitionRow & (Z (! transitionRow)))))))) & (((! ((! transitionRow) & (Y transitionRow))) S ((! ((! transitionRow) & (Y transitionRow))) & (transitionRow & (Z (! transitionRow))))) -> ((((! (classifier = 0)) S ((! (classifier = 0)) & (transitionRow & (Z (! transitionRow))))) | (((! pause) & (! alert)) & (! UVC_pause))) S ((((! (classifier = 0)) S ((! (classifier = 0)) & (transitionRow & (Z (! transitionRow))))) | (((! pause) & (! alert)) & (! UVC_pause))) & (transitionRow & (Z (! transitionRow)))))))",
+                "CoCoSpecCode": "(H(((not (transitionRow) and YtoPre(transitionRow)) => YtoPre(S(((S((not ((classifier = 0)) and (transitionRow and ZtoPre(not (transitionRow)))),not ((classifier = 0))) or ((not (pause) and not (alert)) and not (UVC_pause))) and (transitionRow and ZtoPre(not (transitionRow)))),(S((not ((classifier = 0)) and (transitionRow and ZtoPre(not (transitionRow)))),not ((classifier = 0))) or ((not (pause) and not (alert)) and not (UVC_pause))))))) and (S((not ((not (transitionRow) and YtoPre(transitionRow))) and (transitionRow and ZtoPre(not (transitionRow)))),not ((not (transitionRow) and YtoPre(transitionRow)))) => S(((S((not ((classifier = 0)) and (transitionRow and ZtoPre(not (transitionRow)))),not ((classifier = 0))) or ((not (pause) and not (alert)) and not (UVC_pause))) and (transitionRow and ZtoPre(not (transitionRow)))),(S((not ((classifier = 0)) and (transitionRow and ZtoPre(not (transitionRow)))),not ((classifier = 0))) or ((not (pause) and not (alert)) and not (UVC_pause))))))",
+                "ftExpanded_fetched": "((LAST V ((! ((((! $scope_mode_ft$) & (! LAST)) & (X $scope_mode_ft$)) & (! LAST))) | (X (((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) | LAST) V ($regular_condition_SMV_ft$ -> (((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) | LAST) V $post_condition_SMV_ft$)))))) & ($scope_mode_ft$ -> (((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) | LAST) V ($regular_condition_SMV_ft$ -> (((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) | LAST) V $post_condition_SMV_ft$)))))",
+                "ftExpandedUnoptimized": "((LAST V ((! ((((! transitionRow) & (! LAST)) & (X transitionRow)) & (! LAST))) | (X ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V ((classifier = 0) -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))) & (transitionRow -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V ((classifier = 0) -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))",
+                "ftExpanded": "((LAST V ((! ((((! transitionRow) & (! LAST)) & (X transitionRow)) & (! LAST))) | (X ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V ((classifier = 0) -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))) & (transitionRow -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V ((classifier = 0) -> ((((transitionRow & (! LAST)) & (X (! transitionRow))) | LAST) V (((! pause) & (! alert)) & (! UVC_pause)))))))",
+                "ftInfAUExpanded_fetched": "((G ((! (((! $scope_mode_ft$) & (! LAST)) & (X $scope_mode_ft$))) | (X ((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) V ($regular_condition_SMV_ft$ -> ((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) V $post_condition_SMV_ft$)))))) & ($scope_mode_ft$ -> ((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) V ($regular_condition_SMV_ft$ -> ((($scope_mode_ft$ & (! LAST)) & (X (! $scope_mode_ft$))) V $post_condition_SMV_ft$)))))",
+                "ftInfAUExpanded": "((G ((! ((! transitionRow) & (X transitionRow))) | (X ((transitionRow & (X (! transitionRow))) V ((classifier = 0) -> ((transitionRow & (X (! transitionRow))) V (((! pause) & (! alert)) & (! UVC_pause)))))))) & (transitionRow -> ((transitionRow & (X (! transitionRow))) V ((classifier = 0) -> ((transitionRow & (X (! transitionRow))) V (((! pause) & (! alert)) & (! UVC_pause)))))))",
+                "component": "sRobot"
+            },
+            "_id": "9f373a90-d15b-11ee-8c07-63c7c629ab05"
+        },
+        {
+            "reqid": "classifier-assumption",
+            "parent_reqid": "",
+            "project": "sRobot",
+            "rationale": "",
+            "comments": "",
+            "fulltext": "In transitionRow mode sRobot SHALL always satisfy classifier=0 xor classifier=1 xor classifier=2",
+            "status": "",
+            "semantics": {
+                "type": "nasa",
+                "scope": {
+                    "type": "in"
+                },
+                "condition": "null",
+                "timing": "always",
+                "response": "satisfaction",
+                "variables": [
+                    "transitionRow",
+                    "classifier"
+                ],
+                "scope_mode": "transitionRow",
+                "scopeTextRange": [
+                    0,
+                    20
+                ],
+                "component_name": "sRobot",
+                "componentTextRange": [
+                    22,
+                    27
+                ],
+                "timingTextRange": [
+                    35,
+                    40
+                ],
+                "post_condition": "(classifier = 0 xor classifier = 1 xor classifier = 2)",
+                "responseTextRange": [
+                    42,
+                    95
+                ],
+                "diagramVariables": "M = <b><i>transitionRow</i></b>, Response = <b><i>(classifier = 0 xor classifier = 1 xor classifier = 2)</i></b>.",
+                "description": "ENFORCED: in every interval where <b><i>transitionRow</i></b> holds.\nTRIGGER: first point in the interval.\nREQUIRES: for every trigger, RES must hold at all time points between (and including) the trigger and the end of the interval.",
+                "diagram": "_media/user-interface/examples/svgDiagrams/in_null_always_satisfaction.svg",
+                "scope_mode_pt": "transitionRow",
+                "scope_mode_ft": "transitionRow",
+                "post_condition_unexp_pt": "(((classifier = 0) xor (classifier = 1)) xor (classifier = 2))",
+                "post_condition_unexp_ft": "(((classifier = 0) xor (classifier = 1)) xor (classifier = 2))",
+                "post_condition_SMV_pt": "(((classifier = 0) xor (classifier = 1)) xor (classifier = 2))",
+                "post_condition_SMV_ft": "(((classifier = 0) xor (classifier = 1)) xor (classifier = 2))",
+                "ft_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_unexp_ft$))",
+                "ft": "(LAST V (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "pt_fetched": "(H ($scope_mode_pt$ -> $post_condition_unexp_pt$))",
+                "pt": "(H (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "ptExpanded_fetched": "(H ($scope_mode_pt$ -> $post_condition_SMV_pt$))",
+                "ptExpanded": "(H (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "CoCoSpecCode": "H((transitionRow => (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "ftExpanded_fetched": "(LAST V ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftExpandedUnoptimized": "(LAST V (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "ftExpanded": "(LAST V (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "ftInfAUExpanded_fetched": "(G ($scope_mode_ft$ -> $post_condition_SMV_ft$))",
+                "ftInfAUExpanded": "(G (transitionRow -> (((classifier = 0) xor (classifier = 1)) xor (classifier = 2))))",
+                "component": "sRobot"
+            },
+            "_id": "cb9c9a00-d154-11ee-8c07-63c7c629ab05"
+        }
+    ],
+    "variables": [
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "UVC_pause",
+            "reqs": [
+                "9f373a90-d15b-11ee-8c07-63c7c629ab05",
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "260465f0-d54b-11ee-a8bd-219e7ad1b047",
+                "32af0090-d54a-11ee-a8bd-219e7ad1b047",
+                "03a930e0-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047",
+                "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotUVC_pause"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "alert",
+            "reqs": [
+                "9f373a90-d15b-11ee-8c07-63c7c629ab05",
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "260465f0-d54b-11ee-a8bd-219e7ad1b047",
+                "32af0090-d54a-11ee-a8bd-219e7ad1b047",
+                "03a930e0-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047",
+                "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotalert"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "classifier",
+            "reqs": [
+                "9f373a90-d15b-11ee-8c07-63c7c629ab05",
+                "cb9c9a00-d154-11ee-8c07-63c7c629ab05",
+                "32af0090-d54a-11ee-a8bd-219e7ad1b047",
+                "260465f0-d54b-11ee-a8bd-219e7ad1b047",
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "03a930e0-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047",
+                "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "integer",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotclassifier"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "dgt_14",
+            "reqs": [
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "03a930e0-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047",
+                "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Internal",
+            "moduleName": "",
+            "description": "",
+            "assignment": "distance_to_target > 14",
+            "copilotAssignment": "distance_to_target >  constant 14",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotdgt_14"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "dgt_21",
+            "reqs": [
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "260465f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Internal",
+            "moduleName": "",
+            "description": "",
+            "assignment": "distance_to_target > 21",
+            "copilotAssignment": "distance_to_target > constant 21",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotdgt_21"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "dgt_7",
+            "reqs": [
+                "32af0090-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Internal",
+            "moduleName": "",
+            "description": "",
+            "assignment": "distance_to_target > 7",
+            "copilotAssignment": "distance_to_target > constant 7",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotdgt_7"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "distance_to_target",
+            "reqs": [
+                "1c66d270-d155-11ee-8c07-63c7c629ab05"
+            ],
+            "dataType": "integer",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotdistance_to_target"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "pause",
+            "reqs": [
+                "9f373a90-d15b-11ee-8c07-63c7c629ab05",
+                "377b6040-d54b-11ee-a8bd-219e7ad1b047",
+                "260465f0-d54b-11ee-a8bd-219e7ad1b047",
+                "32af0090-d54a-11ee-a8bd-219e7ad1b047",
+                "03a930e0-d54a-11ee-a8bd-219e7ad1b047",
+                "25e67320-d54a-11ee-a8bd-219e7ad1b047",
+                "3f00e1f0-d54b-11ee-a8bd-219e7ad1b047"
+            ],
+            "dataType": "boolean",
+            "idType": "Output",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobotpause"
+        },
+        {
+            "project": "sRobot",
+            "component_name": "sRobot",
+            "variable_name": "transitionRow",
+            "reqs": [
+                "1c66d270-d155-11ee-8c07-63c7c629ab05",
+                "9f373a90-d15b-11ee-8c07-63c7c629ab05",
+                "cb9c9a00-d154-11ee-8c07-63c7c629ab05"
+            ],
+            "dataType": "boolean",
+            "idType": "Input",
+            "moduleName": "",
+            "description": "",
+            "assignment": "",
+            "copilotAssignment": "",
+            "modeRequirement": "",
+            "modeldoc": false,
+            "modeldoc_id": "",
+            "modelComponent": "",
+            "completed": true,
+            "_id": "sRobotsRobottransitionRow"
+        }
+    ]
+}

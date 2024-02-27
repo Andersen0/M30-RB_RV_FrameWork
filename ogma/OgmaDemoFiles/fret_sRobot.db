@@ -1,0 +1,9 @@
+alert,output, hazard mitigation tactic by sounding an alert, boolean
+classifier, input, input which defines what class of person is detected if any at all, integer
+dgt_14, internal, checks if distance is above 14, boolean
+dgt_21, internal, checks if distance is above 21, boolean
+dgt_7, internal, checks if distance is above 7, boolean
+distance_to_target, input, input of current distance to target classifier, integer
+pause, hazard mitigation tactic by halting the robot, boolean
+transitionRow, input, input of current mode or state the robot is in, boolean
+UVC_pause, output, hazard mitigation tactic by turning off the UVC light, boolean
