@@ -1,0 +1,128 @@
+
+{
+  "sRobotSpec":
+  {
+
+"Internal_variables":
+[
+
+  
+{"name":"classifier", "type":"int", "assignmentLustre": "2;", "assignmentCopilot": "constant 2;"},
+
+
+  
+{"name":"dgt_14", "type":"bool", "assignmentLustre": "distance_to_target > 14", "assignmentCopilot": "distance_to_target > constant 14"},
+
+
+  
+{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": "distance_to_target > constant 21"},
+
+
+  
+{"name":"dgt_7", "type":"bool", "assignmentLustre": "distance_to_target > 7", "assignmentCopilot": "distance_to_target > constant 7"}
+ 
+
+],
+
+"Other_variables":
+[
+
+  
+  {"name":"distance_to_target", "type":"int"},
+ 
+
+
+  
+{"name":"UVC_pause", "type":"bool"},
+
+ 
+  
+{"name":"alert", "type":"bool"},
+
+ 
+  
+{"name":"pause", "type":"bool"},
+
+ 
+  
+{"name":"slowdown", "type":"bool"},
+
+ 
+  
+{"name":"state", "type":"int"},
+
+ 
+  
+  {"name":"turnoffUVC", "type":"bool"}
+  
+ 
+],
+
+"Functions":
+[
+
+],
+
+"Requirements":
+[
+
+  
+{ "name": "worker-state-req-001", "ptLTL": "(H ((classifier = 1) -> (dgt_21 <-> (state = 0))))", "CoCoSpecCode": "H(((classifier = 1) => (dgt_21 = (state = 0))))", "fretish": "While classifier=1 sRobot shall always satisfy (dgt_21 <=> state=0)"},
+
+ 
+  
+{ "name": "dtt-assumption", "ptLTL": "(H (distance_to_target >= 0))", "CoCoSpecCode": "H((distance_to_target >= 0))", "fretish": "The  sRobot  shall always satisfy  distance_to_target>=0 "},
+
+ 
+  
+{ "name": "adult-state-req001", "ptLTL": "(H ((classifier = 2) -> (dgt_21 <-> (state = 0))))", "CoCoSpecCode": "H(((classifier = 2) => (dgt_21 = (state = 0))))", "fretish": "While classifier=2 sRobot shall always satisfy (dgt_21 <=> state=0)"},
+
+ 
+  
+{ "name": "adult-state-req002", "ptLTL": "(H ((classifier = 2) -> (((! dgt_21) & dgt_14) <-> (state = 2))))", "CoCoSpecCode": "H(((classifier = 2) => ((not (dgt_21) and dgt_14) = (state = 2))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_21 & dgt_14 <=> state=2)"},
+
+ 
+  
+{ "name": "adult-state-req003", "ptLTL": "(H ((classifier = 2) -> ((! dgt_14) <-> (state = 3))))", "CoCoSpecCode": "H(((classifier = 2) => (not (dgt_14) = (state = 3))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_14 <=> state=3)"},
+
+ 
+  
+{ "name": "worker-state-req-002", "ptLTL": "(H ((classifier = 1) -> (((! dgt_21) & dgt_14) <-> (state = 1))))", "CoCoSpecCode": "H(((classifier = 1) => ((not (dgt_21) and dgt_14) = (state = 1))))", "fretish": "While classifier=1 sRobot shall always satisfy (! dgt_21 & dgt_14 <=> state=1)"},
+
+ 
+  
+{ "name": "worker-state-req-003", "ptLTL": "(H ((classifier = 1) -> (((! dgt_14) & dgt_7) <-> (state = 2))))", "CoCoSpecCode": "H(((classifier = 1) => ((not (dgt_14) and dgt_7) = (state = 2))))", "fretish": "While classifier=1 sRobot shall always satisfy (! dgt_14 & dgt_7 <=> state=2) "},
+
+ 
+  
+{ "name": "classifier-empty", "ptLTL": "(H ((classifier = 0) -> (((! pause) & (! alert)) & (! UVC_pause))))", "CoCoSpecCode": "H(((classifier = 0) => ((not (pause) and not (alert)) and not (UVC_pause))))", "fretish": "While classifier=0 sRobot SHALL always satisfy (!pause & !alert & !UVC_pause)"},
+
+ 
+  
+{ "name": "operationalstate-req004", "ptLTL": "(H ((state = 3) -> ((((! slowdown) & pause) & alert) & turnoffUVC)))", "CoCoSpecCode": "H(((state = 3) => (((not (slowdown) and pause) and alert) and turnoffUVC)))", "fretish": "While state = 3 sRobot shall ALWAYS satisfy (!slowdown & pause & alert & turnoffUVC)"},
+
+ 
+  
+{ "name": "operationalstate-req001", "ptLTL": "(H ((state = 0) -> ((((! slowdown) & (! pause)) & (! alert)) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 0) => (((not (slowdown) and not (pause)) and not (alert)) and not (turnoffUVC))))", "fretish": "While state = 0 sRobot shall ALWAYS satisfy (!slowdown & !pause & !alert & !turnoffUVC)"},
+
+ 
+  
+{ "name": "operationalstate-req002", "ptLTL": "(H ((state = 1) -> (((slowdown & (! pause)) & alert) & (! UVC_pause))))", "CoCoSpecCode": "H(((state = 1) => (((slowdown and not (pause)) and alert) and not (UVC_pause))))", "fretish": "While state = 1 sRobot shall ALWAYS satisfy (slowdown & !pause & alert & !UVC_pause)"},
+
+ 
+  
+{ "name": "classifier-assumption", "ptLTL": "(H (((classifier = 0) xor (classifier = 1)) xor (classifier = 2)))", "CoCoSpecCode": "H((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)))", "fretish": "sRobot SHALL always satisfy classifier=0 xor classifier=1 xor classifier=2"},
+
+ 
+  
+{ "name": "worker-state-req004", "ptLTL": "(H ((classifier = 1) -> ((! dgt_7) <-> (state = 3))))", "CoCoSpecCode": "H(((classifier = 1) => (not (dgt_7) = (state = 3))))", "fretish": "While classifier = 1 sRobot shall always satisfy (! dgt_7 <=> state=3)"},
+
+ 
+  
+{ "name": "operationalstate-req003", "ptLTL": "(H ((state = 2) -> ((((! slowdown) & pause) & alert) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 2) => (((not (slowdown) and pause) and alert) and not (turnoffUVC))))", "fretish": "While state = 2 sRobot shall ALWAYS satisfy (!slowdown & pause & alert & !turnoffUVC)"}
+  
+ 
+]
+}
+}
+
