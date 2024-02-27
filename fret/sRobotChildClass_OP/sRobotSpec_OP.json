@@ -1,0 +1,124 @@
+
+{
+  "sRobotSpec":
+  {
+
+"Internal_variables":
+[
+
+  
+{"name":"classifier", "type":"int", "assignmentLustre": "2;", "assignmentCopilot": "constant 2;"},
+
+
+  
+{"name":"dgt_14", "type":"bool", "assignmentLustre": "distance_to_target > 14", "assignmentCopilot": "distance_to_target > constant 14"},
+
+
+  
+{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": "distance_to_target > constant 21"},
+
+
+  
+{"name":"dgt_28", "type":"bool", "assignmentLustre": "distance_to_target > 28", "assignmentCopilot": "distance_to_target > constant 28"},
+
+
+  
+{"name":"dgt_7", "type":"bool", "assignmentLustre": "distance_to_target > 7", "assignmentCopilot": "distance_to_target > constant 7"}
+ 
+
+],
+
+"Other_variables":
+[
+
+  
+  {"name":"distance_to_target", "type":"int"},
+ 
+
+
+  
+{"name":"UVC_pause", "type":"bool"},
+
+ 
+  
+{"name":"alert", "type":"bool"},
+
+ 
+  
+{"name":"pause", "type":"bool"},
+
+ 
+  
+  {"name":"state", "type":"int"}
+  
+ 
+],
+
+"Functions":
+[
+
+],
+
+"Requirements":
+[
+
+  
+{ "name": "worker-state-req-001", "ptLTL": "(H ((classifier = 1) -> (dgt_14 <-> (state = 0))))", "CoCoSpecCode": "H(((classifier = 1) => (dgt_14 = (state = 0))))", "fretish": "While classifier=1 sRobot shall always satisfy (dgt_14 <=> state=0)"},
+
+ 
+  
+{ "name": "dtt-assumption", "ptLTL": "(H (distance_to_target >= 0))", "CoCoSpecCode": "H((distance_to_target >= 0))", "fretish": "The  sRobot  shall always satisfy  distance_to_target>=0 "},
+
+ 
+  
+{ "name": "adult-state-req001", "ptLTL": "(H ((classifier = 2) -> (dgt_21 <-> (state = 0))))", "CoCoSpecCode": "H(((classifier = 2) => (dgt_21 = (state = 0))))", "fretish": "While classifier=2 sRobot shall always satisfy (dgt_21 <=> state=0)"},
+
+ 
+  
+{ "name": "adult-state-req002", "ptLTL": "(H ((classifier = 2) -> (((! dgt_21) & dgt_14) <-> (state = 1))))", "CoCoSpecCode": "H(((classifier = 2) => ((not (dgt_21) and dgt_14) = (state = 1))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_21 & dgt_14 <=> state=1)"},
+
+ 
+  
+{ "name": "adult-state-req003", "ptLTL": "(H ((classifier = 2) -> ((! dgt_14) <-> (state = 3))))", "CoCoSpecCode": "H(((classifier = 2) => (not (dgt_14) = (state = 3))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_14 <=> state=3)"},
+
+ 
+  
+{ "name": "worker-state-req-002", "ptLTL": "(H ((classifier = 1) -> (((! dgt_14) & dgt_7) <-> (state = 1))))", "CoCoSpecCode": "H(((classifier = 1) => ((not (dgt_14) and dgt_7) = (state = 1))))", "fretish": "While classifier=1 sRobot shall always satisfy (! dgt_14 & dgt_7 <=> state=1)"},
+
+ 
+  
+{ "name": "worker-state-req-003", "ptLTL": "(H ((classifier = 1) -> ((! dgt_7) <-> (state = 2))))", "CoCoSpecCode": "H(((classifier = 1) => (not (dgt_7) = (state = 2))))", "fretish": "While classifier=1 sRobot shall always satisfy (! dgt_7 <=> state=2) "},
+
+ 
+  
+{ "name": "empty-class", "ptLTL": "(H ((classifier = 0) -> (((! pause) & (! alert)) & (! UVC_pause))))", "CoCoSpecCode": "H(((classifier = 0) => ((not (pause) and not (alert)) and not (UVC_pause))))", "fretish": "While classifier=0 sRobot SHALL always satisfy !pause & !alert & !UVC_pause"},
+
+ 
+  
+{ "name": "classifier-assumption", "ptLTL": "(H ((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))", "CoCoSpecCode": "H(((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)) xor (classifier = 3)))", "fretish": "sRobot SHALL always satisfy classifier=0 xor classifier=1 xor classifier=2 xor classifier=3"},
+
+ 
+  
+{ "name": "adult", "ptLTL": "(H ((classifier = 2) -> ((((distance_to_target > 21) -> ((pause & alert) & (! UVC_pause))) & (((distance_to_target <= 21) & (distance_to_target > 14)) -> ((pause & alert) & UVC_pause))) & ((distance_to_target <= 14) -> ((pause & alert) & UVC_pause)))))", "CoCoSpecCode": "H(((classifier = 2) => ((((distance_to_target > 21) => ((pause and alert) and not (UVC_pause))) and (((distance_to_target <= 21) and (distance_to_target > 14)) => ((pause and alert) and UVC_pause))) and ((distance_to_target <= 14) => ((pause and alert) and UVC_pause)))))", "fretish": "While classifier=2 sRobot SHALL always satisfy (distance_to_target > 21 => (pause & alert & !UVC_pause)) & ((distance_to_target <=21 & distance_to_target > 14) => (pause & alert & UVC_pause)) & (distance_to_target <= 14 => (pause & alert & UVC_pause))"},
+
+ 
+  
+{ "name": "worker", "ptLTL": "(H ((classifier = 1) -> ((((distance_to_target > 14) -> (((! pause) & alert) & (! UVC_pause))) & (((distance_to_target <= 14) & (distance_to_target > 7)) -> ((pause & alert) & (! UVC_pause)))) & ((distance_to_target <= 7) -> ((pause & alert) & UVC_pause)))))", "CoCoSpecCode": "H(((classifier = 1) => ((((distance_to_target > 14) => ((not (pause) and alert) and not (UVC_pause))) and (((distance_to_target <= 14) and (distance_to_target > 7)) => ((pause and alert) and not (UVC_pause)))) and ((distance_to_target <= 7) => ((pause and alert) and UVC_pause)))))", "fretish": "While classifier=1 sRobot SHALL always satisfy (distance_to_target > 14 => (!pause & alert & !UVC_pause)) & ((distance_to_target <=14 & distance_to_target > 7) => (pause & alert & !UVC_pause)) & (distance_to_target <= 7 => (pause & alert & UVC_pause))"},
+
+ 
+  
+{ "name": "child-state-req001", "ptLTL": "(H ((classifier = 3) -> (dgt_28 <-> (state = 0))))", "CoCoSpecCode": "H(((classifier = 3) => (dgt_28 = (state = 0))))", "fretish": "While classifier=3 sRobot shall always satisfy (dgt_28 <=> state=0)"},
+
+ 
+  
+{ "name": "child-state-req002", "ptLTL": "(H ((classifier = 3) -> (((! dgt_28) & dgt_21) <-> (state = 1))))", "CoCoSpecCode": "H(((classifier = 3) => ((not (dgt_28) and dgt_21) = (state = 1))))", "fretish": "While classifier=3 sRobot shall always satisfy (! dgt_28 & dgt_21 <=> state=1)"},
+
+ 
+  
+{ "name": "child-state-req003", "ptLTL": "(H ((classifier = 3) -> ((! dgt_21) <-> (state = 3))))", "CoCoSpecCode": "H(((classifier = 3) => (not (dgt_21) = (state = 3))))", "fretish": "While classifier=3 sRobot shall always satisfy (! dgt_21 <=> state=3)"}
+  
+ 
+]
+}
+}
+
