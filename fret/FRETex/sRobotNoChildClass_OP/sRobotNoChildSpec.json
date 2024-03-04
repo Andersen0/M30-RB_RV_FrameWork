@@ -7,15 +7,11 @@
 [
 
   
-{"name":"classifier", "type":"int", "assignmentLustre": "2;", "assignmentCopilot": "constant 2;"},
-
-
-  
 {"name":"dgt_14", "type":"bool", "assignmentLustre": "distance_to_target > 14", "assignmentCopilot": "distance_to_target > constant 14"},
 
 
   
-{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": "distance_to_target > constant 21"},
+{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": ""},
 
 
   
@@ -28,14 +24,14 @@
 [
 
   
+  {"name":"classifier", "type":"int"},
+ 
+
+  
   {"name":"distance_to_target", "type":"int"},
  
 
 
-  
-{"name":"UVC_pause", "type":"bool"},
-
- 
   
 {"name":"alert", "type":"bool"},
 
@@ -95,7 +91,7 @@
 
  
   
-{ "name": "classifier-empty", "ptLTL": "(H ((classifier = 0) -> (((! pause) & (! alert)) & (! UVC_pause))))", "CoCoSpecCode": "H(((classifier = 0) => ((not (pause) and not (alert)) and not (UVC_pause))))", "fretish": "While classifier=0 sRobot SHALL always satisfy (!pause & !alert & !UVC_pause)"},
+{ "name": "classifier-empty", "ptLTL": "(H ((classifier = 0) -> (state = 0)))", "CoCoSpecCode": "H(((classifier = 0) => (state = 0)))", "fretish": "While classifier=0 sRobot SHALL always satisfy (state=0)"},
 
  
   
@@ -107,7 +103,7 @@
 
  
   
-{ "name": "operationalstate-req002", "ptLTL": "(H ((state = 1) -> (((slowdown & (! pause)) & alert) & (! UVC_pause))))", "CoCoSpecCode": "H(((state = 1) => (((slowdown and not (pause)) and alert) and not (UVC_pause))))", "fretish": "While state = 1 sRobot shall ALWAYS satisfy (slowdown & !pause & alert & !UVC_pause)"},
+{ "name": "operationalstate-req002", "ptLTL": "(H ((state = 1) -> (((slowdown & (! pause)) & alert) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 1) => (((slowdown and not (pause)) and alert) and not (turnoffUVC))))", "fretish": "While state = 1 sRobot shall ALWAYS satisfy (slowdown & !pause & alert & !turnoffUVC)"},
 
  
   

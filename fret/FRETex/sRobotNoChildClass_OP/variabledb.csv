@@ -1,10 +1,7 @@
-alert,output,hazard mitigation tactic by sounding an alert,boolean
-classifier,input,input which defines what class of person is detected if any at all,integer
-dgt_14,internal,checks if distance is above 14,boolean
-dgt_21,internal,checks if distance is above 21,boolean
-dgt_7,internal,checks if distance is above 7,boolean
-distance_to_target,input,input of current distance to target classifier,integer
-pause,output,hazard mitigation tactic by halting the robot,boolean
-slowdown,output,hazard mitigation tactic by slowing down the robot,boolean
-state,output,defines the current state of the robot,integer
-turnoffUVC,output,hazard mitigation tactic by turning off the UVC light,boolean
+("distance_to_target","int","/scan","float32")
+("classifier","int","/sRobotClassifier","int")
+("alert","bool","/sRobotAlert","bool")
+("pause","bool","/sRobotPause","bool")
+("slowdown","bool","/sRobotSlowdown","bool")
+("state","int","/sRobotState","int")
+("turnoffUVC","bool","/sRobotTurnoffUVC","bool")
