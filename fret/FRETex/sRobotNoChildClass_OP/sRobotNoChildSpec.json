@@ -11,7 +11,7 @@
 
 
   
-{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": ""},
+{"name":"dgt_21", "type":"bool", "assignmentLustre": "distance_to_target > 21", "assignmentCopilot": "distance_to_target > constant 21"},
 
 
   
