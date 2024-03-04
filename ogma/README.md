@@ -15,3 +15,15 @@ Files that are not operational (_XOP) or have an error message to their name (_E
 | File | Error Message |
 | ----------- | ----------- |
 | test_OP.hs  | Operational |
+
+
+How the db file should look like for ogma ros implementation:
+```haskell
+("distance_to_target","int","/scan","float32")
+("classifier","int","/sRobotClassifier","int")
+("alert","bool","/sRobotAlert","bool")
+("pause","bool","/sRobotPause","bool")
+("slowdown","bool","/sRobotSlowdown","bool")
+("state","int","/sRobotState","int")
+("turnoffUVC","bool","/sRobotTurnoffUVC","bool")
+```
