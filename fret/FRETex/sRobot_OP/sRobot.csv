@@ -1,0 +1,7 @@
+("distance_to_target","int64_t","/scan","Int64_t")
+("classifier","int64_t","/sRobotClassifier","Int64_t")
+("alert","bool","/sRobotAlert","bool")
+("pause","bool","/sRobotPause","bool")
+("slowdown","bool","/sRobotSlowdown","bool")
+("state","int64_t","/sRobotState","Int64_t")
+("turnoffUVC","bool","/sRobotTurnoffUVC","bool")
