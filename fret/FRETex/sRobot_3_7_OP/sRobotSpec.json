@@ -1,0 +1,116 @@
+
+{
+  "sRobotSpec":
+  {
+
+"Internal_variables":
+[
+
+  
+{"name":"dgt_3", "type":"bool", "assignmentLustre": "distance_to_target > 3", "assignmentCopilot": "distance_to_target > constant 3"},
+
+
+  
+{"name":"dgt_7", "type":"bool", "assignmentLustre": "distance_to_target > 7", "assignmentCopilot": "distance_to_target > constant 7"}
+ 
+
+],
+
+"Other_variables":
+[
+
+  
+  {"name":"classifier", "type":"int"},
+ 
+
+  
+  {"name":"distance_to_target", "type":"int"},
+ 
+
+
+  
+{"name":"alert", "type":"bool"},
+
+ 
+  
+{"name":"halt", "type":"bool"},
+
+ 
+  
+{"name":"slowdown", "type":"bool"},
+
+ 
+  
+{"name":"state", "type":"int"},
+
+ 
+  
+  {"name":"turnoffUVC", "type":"bool"}
+  
+ 
+],
+
+"Functions":
+[
+
+],
+
+"Requirements":
+[
+
+  
+{ "name": "state_req101", "ptLTL": "(H ((classifier = 1) -> (dgt_7 -> (state = 1))))", "CoCoSpecCode": "H(((classifier = 1) => (dgt_7 => (state = 1))))", "fretish": "While classifier=1 sRobot shall always satisfy (dgt_7 => state=1)"},
+
+ 
+  
+{ "name": "dtt_assumption", "ptLTL": "(H ((! (classifier = 0)) -> (distance_to_target >= 0)))", "CoCoSpecCode": "H((not ((classifier = 0)) => (distance_to_target >= 0)))", "fretish": "While !(classifier=0) the  sRobot  shall always satisfy distance_to_target>=0"},
+
+ 
+  
+{ "name": "state_req201", "ptLTL": "(H ((classifier = 2) -> (dgt_7 -> (state = 2))))", "CoCoSpecCode": "H(((classifier = 2) => (dgt_7 => (state = 2))))", "fretish": "While classifier=2 sRobot shall always satisfy (dgt_7 => state=2)"},
+
+ 
+  
+{ "name": "state_req202", "ptLTL": "(H ((classifier = 2) -> (((! dgt_7) & dgt_3) -> (state = 3))))", "CoCoSpecCode": "H(((classifier = 2) => ((not (dgt_7) and dgt_3) => (state = 3))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_7 & dgt_3 => state=3)"},
+
+ 
+  
+{ "name": "state_req203", "ptLTL": "(H ((classifier = 2) -> ((! dgt_3) -> (state = 3))))", "CoCoSpecCode": "H(((classifier = 2) => (not (dgt_3) => (state = 3))))", "fretish": "While classifier=2 sRobot shall always satisfy (! dgt_3 => state=3)"},
+
+ 
+  
+{ "name": "state_req102", "ptLTL": "(H ((classifier = 1) -> (((! dgt_7) & dgt_3) -> (state = 2))))", "CoCoSpecCode": "H(((classifier = 1) => ((not (dgt_7) and dgt_3) => (state = 2))))", "fretish": "While classifier=1 sRobot shall always satisfy (! dgt_7 & dgt_3 => state=2) "},
+
+ 
+  
+{ "name": "classifier_empty", "ptLTL": "(H ((classifier = 0) -> (state = 0)))", "CoCoSpecCode": "H(((classifier = 0) => (state = 0)))", "fretish": "While classifier=0 sRobot SHALL always satisfy state=0"},
+
+ 
+  
+{ "name": "operationalstate_3", "ptLTL": "(H ((state = 3) -> ((((! slowdown) & halt) & alert) & turnoffUVC)))", "CoCoSpecCode": "H(((state = 3) => (((not (slowdown) and halt) and alert) and turnoffUVC)))", "fretish": "While state = 3 sRobot shall ALWAYS satisfy (!slowdown & halt & alert & turnoffUVC)"},
+
+ 
+  
+{ "name": "operationalstate_0", "ptLTL": "(H ((state = 0) -> ((((! slowdown) & (! halt)) & (! alert)) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 0) => (((not (slowdown) and not (halt)) and not (alert)) and not (turnoffUVC))))", "fretish": "While state = 0 sRobot shall ALWAYS satisfy (!slowdown & !halt & !alert & !turnoffUVC)"},
+
+ 
+  
+{ "name": "operationalstate_1", "ptLTL": "(H ((state = 1) -> (((slowdown & (! halt)) & alert) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 1) => (((slowdown and not (halt)) and alert) and not (turnoffUVC))))", "fretish": "While state = 1 sRobot shall ALWAYS satisfy (slowdown & !halt & alert & !turnoffUVC)"},
+
+ 
+  
+{ "name": "classifier_assumption", "ptLTL": "(H (((classifier = 0) xor (classifier = 1)) xor (classifier = 2)))", "CoCoSpecCode": "H((((classifier = 0) xor (classifier = 1)) xor (classifier = 2)))", "fretish": "sRobot SHALL always satisfy classifier=0 xor classifier=1 xor classifier=2"},
+
+ 
+  
+{ "name": "state_req103", "ptLTL": "(H ((classifier = 1) -> ((! dgt_3) -> (state = 3))))", "CoCoSpecCode": "H(((classifier = 1) => (not (dgt_3) => (state = 3))))", "fretish": "While classifier = 1 sRobot shall always satisfy (! dgt_3 => state=3)"},
+
+ 
+  
+{ "name": "operationalstate_2", "ptLTL": "(H ((state = 2) -> ((((! slowdown) & halt) & alert) & (! turnoffUVC))))", "CoCoSpecCode": "H(((state = 2) => (((not (slowdown) and halt) and alert) and not (turnoffUVC))))", "fretish": "While state = 2 sRobot shall ALWAYS satisfy (!slowdown & halt & alert & !turnoffUVC)"}
+  
+ 
+]
+}
+}
+
