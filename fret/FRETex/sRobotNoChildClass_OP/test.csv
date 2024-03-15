@@ -5,3 +5,4 @@
 ("slowdown","bool","/sRobotSlowdown","bool")
 ("state","int64_t","/sRobotState","Int64_t")
 ("turnoffUVC","bool","/sRobotTurnoffUVC","bool")
+("halt","bool","/sRobotHalt,"bool")
