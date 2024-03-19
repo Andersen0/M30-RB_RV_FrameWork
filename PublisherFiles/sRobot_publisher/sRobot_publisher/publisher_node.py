@@ -44,14 +44,14 @@ class SimplePublisher(Node):
                 'distance_to_target': Int64(data=21),
                 'classifier': Int64(data=2),
                 'alert': Bool(data=True),
-                'halt': Bool(data=False),
-                'slowdown': Bool(data=True),
-                'state': Int64(data=1),
+                'halt': Bool(data=True),
+                'slowdown': Bool(data=False),
+                'state': Int64(data=2),
                 'turnoffUVC': Bool(data=False),
             },
             'scenario_3': {
                 'distance_to_target': Int64(data=5),
-                'classifier': Int64(data=2),
+                'classifier': Int64(data=1),
                 'alert': Bool(data=True),
                 'halt': Bool(data=False),
                 'slowdown': Bool(data=True),
@@ -75,7 +75,7 @@ def main(args=None):
     rclpy.init(args=args)
     
     # Define your sequence of scenarios
-    scenario_sequence = [0, 0, 0, 1]
+    scenario_sequence = [1, 1, 1, 0, 0, 0, 2, 2, 2]
     
     node = SimplePublisher(scenario_sequence, node_name='simple_publisher')
     
