@@ -62,47 +62,51 @@ class CopilotRV : public rclcpp::Node {
         std::bind(&CopilotRV::turnoffUVC_callback, this, _1));
 
       handlerstate_req101_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req101", 10);
+        "copilot/handlerstate_req101", 10);
 
       handlerdtt_assumption_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerDtt_assumption", 10);
+        "copilot/handlerdtt_assumption", 10);
 
       handlerstate_req201_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req201", 10);
+        "copilot/handlerstate_req201", 10);
 
       handlerstate_req202_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req202", 10);
+        "copilot/handlerstate_req202", 10);
 
       handlerstate_req203_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req203", 10);
+        "copilot/handlerstate_req203", 10);
 
       handlerstate_req102_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req102", 10);
+        "copilot/handlerstate_req102", 10);
 
       handlerstate_req103_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req103", 10);
+        "copilot/handlerstate_req103", 10);
 
       handlerclassifier_empty_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerClassifier_empty", 10);
+        "copilot/handlerclassifier_empty", 10);
 
       handleroperationalstate_3_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerOperationalstate_3", 10);
+        "copilot/handleroperationalstate_3", 10);
 
       handleroperationalstate_0_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerOperationalstate_0", 10);
+        "copilot/handleroperationalstate_0", 10);
 
       handleroperationalstate_1_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerOperationalstate_1", 10);
+        "copilot/handleroperationalstate_1", 10);
 
       handlerclassifier_assumption_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerClassifier_assumption", 10);
+        "copilot/handlerclassifier_assumption", 10);
 
       handlerstate_req104_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerState_req104", 10);
+        "copilot/handlerstate_req104", 10);
 
       handleroperationalstate_2_publisher_ = this->create_publisher<std_msgs::msg::Empty>(
-        "copilot/handlerOperationalstate_2", 10);
-
+        "copilot/handleroperationalstate_2", 10);
+      
+      // Timer to call step function every 1 second
+      timer_ = this->create_wall_timer(
+          std::chrono::milliseconds(1000),
+          std::bind(&CopilotRV::step_wrapper, this));
     }
 
     // Report (publish) monitor violations.
@@ -198,37 +202,30 @@ class CopilotRV : public rclcpp::Node {
   private:
     void classifier_callback(const std_msgs::msg::Int64::SharedPtr msg) const {
       classifier = msg->data;
-      step();
     }
 
     void distance_to_target_callback(const std_msgs::msg::Int64::SharedPtr msg) const {
       distance_to_target = msg->data;
-      step();
     }
 
     void alert_callback(const std_msgs::msg::Bool::SharedPtr msg) const {
       alert = msg->data;
-      step();
     }
 
     void slowdown_callback(const std_msgs::msg::Bool::SharedPtr msg) const {
       slowdown = msg->data;
-      step();
     }
      
     void halt_callback(const std_msgs::msg::Bool::SharedPtr msg) const {
       halt = msg->data;
-      step();
     }
 
     void state_callback(const std_msgs::msg::Int64::SharedPtr msg) const {
       state = msg->data;
-      step();
     }
 
     void turnoffUVC_callback(const std_msgs::msg::Bool::SharedPtr msg) const {
       turnoffUVC = msg->data;
-      step();
     }
 
     rclcpp::Subscription<std_msgs::msg::Int64>::SharedPtr classifier_subscription_;
@@ -272,7 +269,13 @@ class CopilotRV : public rclcpp::Node {
     rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr handlerstate_req104_publisher_;
 
     rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr handleroperationalstate_2_publisher_;
-
+    
+    // Timer declaration
+    rclcpp::TimerBase::SharedPtr timer_;
+    
+    // Wrapper function for step to be compatible with timer
+    void step_wrapper() {
+        step();}
 };
 
 // Pass monitor violations to the actual class, which has ways to
@@ -359,9 +362,10 @@ void handleroperationalstate_2() {
   CopilotRV::getInstance().handleroperationalstate_2();
 }
 
-int main(int argc, char* argv[]) {
-  rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<CopilotRV>());
-  rclcpp::shutdown();
-  return 0;
+int main(int argc, char * argv[]) {
+    rclcpp::init(argc, argv);
+    auto node = std::make_shared<CopilotRV>();
+    rclcpp::spin(node);
+    rclcpp::shutdown();
+    return 0;
 }

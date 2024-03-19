@@ -19,6 +19,7 @@ ament_target_dependencies(copilot_logger rclcpp std_msgs)
 
 install(TARGETS
   copilot
+  copilot_logger
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

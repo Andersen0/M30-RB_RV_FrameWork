@@ -65,55 +65,55 @@ class CopilotLogger : public rclcpp::Node {
     }
 
   private:
-    void handlerstate_req101_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req101_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req101");
     }
 
-    void handlerdtt_assumption_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerdtt_assumption_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerdtt_assumption");
     }
 
-    void handlerstate_req201_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req201_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req201");
     }
 
-    void handlerstate_req202_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req202_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req202");
     }
 
-    void handlerstate_req203_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req203_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req203");
     }
 
-    void handlerstate_req102_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req102_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req102");
     }
 
-    void handlerclassifier_empty_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerclassifier_empty_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerclassifier_empty");
     }
 
-    void handleroperationalstate_3_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handleroperationalstate_3_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handleroperationalstate_3");
     }
 
-    void handleroperationalstate_0_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handleroperationalstate_0_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handleroperationalstate_0");
     }
 
-    void handleroperationalstate_1_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handleroperationalstate_1_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handleroperationalstate_1");
     }
 
-    void handlerclassifier_assumption_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerclassifier_assumption_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerclassifier_assumption");
     }
 
-    void handlerstate_req103_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handlerstate_req103_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handlerstate_req103");
     }
 
-    void handleroperationalstate_2_callback(const std_msgs::msg::Empty::SharedPtr msg) const {
+    void handleroperationalstate_2_callback(const std_msgs::msg::Empty::SharedPtr /*msg*/) const {
       RCLCPP_INFO(this->get_logger(), "Copilot monitor violation: handleroperationalstate_2");
     }
 
